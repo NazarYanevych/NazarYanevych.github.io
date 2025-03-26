@@ -93,3 +93,37 @@ a {
            }
 
 
+
+           * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #container * {
+            border: 1px solid black;
+        }
+        
+        li a {
+            text-decoration: none;
+        }
+        
+        ul + p {
+            color: red;
+        }
+        
+        div > ul {
+            border: 1px solid black;
+        }
+        
+        ul ~ p {
+            color: red;
+        }
+        
+        a[title] {
+            color: green;
+        }
+        
+        a[href="http://everstudent.ua"] {
+            color: #ffde00;
+        }
+        

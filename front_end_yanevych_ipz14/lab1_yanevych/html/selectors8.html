@@ -1,12 +1,44 @@
-<html>
+<!DOCTYPE html>
+<html lang="uk">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Селектори</title>
-    <link rel="stylesheet" type="text/css" href="/NazarYanevych.github.io/front_end_yanevych_ipz14/lab1_yanevych/style/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
     <h1>Приклади CSS Селекторів</h1>
 
-    
+    <p class="highlight">1. Селектор (Universal Selector `*`): цей абзац для загального стилю всіх елементів на сторінці.</p>
+
+    <div id="container">
+        <p>2. Селектор (Universal Selector для дітей `#container *`): всі дочірні елементи контейнера з обрамленням.</p>
+    </div>
+
+    <ul>
+        <li><a href="#">3. Селектор (Descendant Selector `li a`): посилання в списку без підкреслення.</a></li>
+        <li><a href="#">Посилання</a></li>
+    </ul>
+
+    <ul>
+        <li>4. Селектор (Adjacent Sibling Selector `ul + p`): абзац після списку стане червоним.</li>
+    </ul>
+
+    <div id="container">
+        <ul>
+            <li>5. Селектор (Child Selector `div > ul`): список в контейнері має обрамлення.</li>
+            <ul>
+                <li>Вкладений список, який не вибирається даним селектором.</li>
+            </ul>
+        </ul>
+    </div>
+
+    <p>6. Селектор (General Sibling Selector `ul ~ p`): абзаци після списку будуть червоними.</p>
+
+    <a href="#" title="Link Title">7. Селектор (Attribute Selector `[title]`): посилання з атрибутом `title` будуть зеленими.</a>
+
+    <a href="http://everstudent.ua">8. Селектор (Attribute Selector з конкретним значенням `[href="http://everstudent.ua"]`): посилання на Everstudent стане золотим.</a>
+
 </body>
 </html>
