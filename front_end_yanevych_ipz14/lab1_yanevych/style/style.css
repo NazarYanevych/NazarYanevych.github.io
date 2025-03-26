@@ -56,4 +56,11 @@ a {
             font-family: Times New Roman, Georgia, serif;
             font-style: oblique;
            }
+
+           p.ex8{
+            font-family: Arial, Candara, Century-Gothic, sans-serif;
+            font-style: normal;
+            font-variant: small-caps;
+           }
+           
            
