@@ -123,7 +123,5 @@ a {
             color: green;
         }
         
-        a[href="http://everstudent.ua"] {
-            color: #ffde00;
-        }
-        
+        a [href = "http: // everstudent .ua"] {color: #ffde00;  
+        } 
