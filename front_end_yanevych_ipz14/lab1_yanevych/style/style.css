@@ -34,9 +34,9 @@ a {
             color: #00ea00;
             background-color:#fa2f2f;
         }
-        body.body5 {
-            background-image: url("../image/ball.jpg");
-            background-repeat: no-repeat;
+        body.body55 {
+            background-image: url("/NazarYanevych.github.io/front_end_yanevych_ipz14/lab1_yanevych/image/ball.jpg");
+            background-repeat: repeat;
             background-position: center center;
             background-size: cover;
         }
