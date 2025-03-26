@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    width: 40%;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+.table1 {
+    width: 200px;
+    border: 3px solid purple;
+}
+
+.table2 td {
+    border: 2px solid green;
+    padding: 5px;
+}
+
+.table3 {
+    border: 2px solid red;
+    border-spacing: 20px;
+}
+
+.table4 {
+    border: 2px solid blue;
+    border-spacing: 30px;
+}
