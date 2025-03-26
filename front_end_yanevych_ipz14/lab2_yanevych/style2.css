@@ -2,22 +2,27 @@ table {
     width: 40%;
     height: 200px;
     border-collapse: collapse;
-    border: 4px solid purple;
+    border: 5px solid purple;
 }
 
 th, td {
     border: 2px solid purple;
     text-align: center;
+    padding: 5px;
 }
 
 th {
-    height: 50px;
+    background-color: #f2f2f2;
 }
 
 td {
-    height: 150px;
+    vertical-align: top;
 }
 
-th:first-child, td:first-child {
+.col1 {
     width: 150px;
+}
+
+.row2 {
+    height: 150px;
 }
