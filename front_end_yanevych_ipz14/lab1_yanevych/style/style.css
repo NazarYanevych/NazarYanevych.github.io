@@ -63,5 +63,11 @@ a {
             font-variant: small-caps;
            }
         
+           p.ex9{
+            font-family: Arial, Candara, Century-Gothic, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 600
+           }
            
            
