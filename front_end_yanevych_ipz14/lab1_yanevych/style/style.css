@@ -35,5 +35,6 @@ a {
             background-color:#fa2f2f;
         }
         body.body5{
-            background: #ff0000 url("/NazarYanevych.github.io/front_end_yanevych_ipz14/lab1_yanevych/image/ball.jpg") repeat-x;
-        }
+            background-image: url("../images/ball.jpg");
+           }
+           
