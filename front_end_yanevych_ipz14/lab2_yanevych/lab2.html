@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
-    <title>Image Map Example</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта зображень</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Клікніть на об'єкт, щоб дізнатися більше</h1>
-    <img src="330px-Grey_and_navy_suit_on_mannequin.jpg" usemap="#objectsmap" alt="Objects">
-    <img src="Jeans (1).png" usemap="#objectsmap" alt="Objects">
-    <img src="Patrick_Moenaert_en_de_Hoofdman_van_de_Edele_Confrérie,_Bloedprocessie.png" usemap="#objectsmap" alt="Objects">
-
-    <map name="objectsmap">
-        <area shape="rect" coords="15,547,425,810" href="https://uk.wikipedia.org/wiki/Візитка_(одяг)" alt="Яблуко">
-        <area shape="circle" coords="300,100,50" href="https://uk.wikipedia.org/wiki/Класичний_костюм" alt="Книга">
-        <area shape="poly" coords="200,200,250,150,300,200" href="https://uk.wikipedia.org/wiki/Одяг" alt="Кіт">
+    <h1>Клікніть на об'єкти для отримання інформації</h1>
+    <img src="man.png" usemap="#objects-map" alt="Різні об'єкти">
+     <a style="display: block; text-align: right;" href="/NazarYanevych.github.io/index.html">На головну</a>
+    <map name="objects-map">
+        <area shape="circle" coords="316,564,226" href="https://uk.wikipedia.org/wiki/Класичний_костюм" alt="Коло">
+        <area shape="rect" coords="640,66,1224,946" href="https://uk.wikipedia.org/wiki/Одяг" alt="Прямокутник">
+        <area shape="poly" coords="1600,200,1400,800,1800,800" href="https://uk.wikipedia.org/wiki/Традиційна_чоловіча_вишиванка" alt="Трикутник">
     </map>
-
-    <p>Підставте свій файл зображення і змініть координати відповідно до вашого зображення.</p>
 </body>
 </html>
