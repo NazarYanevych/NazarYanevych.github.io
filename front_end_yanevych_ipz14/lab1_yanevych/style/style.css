@@ -34,7 +34,10 @@ a {
             color: #00ea00;
             background-color:#fa2f2f;
         }
-        body.body5{
-            background-image: url("../images/ball.jpg");
-           }
-           
+        body.body5 {
+            background-image: url("../image/ball.jpg");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+           p.ex6{font-family: Arial, Candara, Century-Gothic, sans-serif}
