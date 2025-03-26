@@ -15,8 +15,9 @@ th, td {
 }
 
 .table1 {
-    width: 200px;
-    border: 3px solid purple;
+    width: -40%;
+    height: 200;
+    border: 150px solid purple;
 }
 
 .table2 td {
