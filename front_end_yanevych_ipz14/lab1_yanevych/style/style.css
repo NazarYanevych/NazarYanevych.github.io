@@ -41,3 +41,19 @@ a {
             background-size: cover;
         }
            p.ex6{font-family: Arial, Candara, Century-Gothic, sans-serif}
+
+
+
+           h1.ex7{
+            font-family: Arial, Candara, Century-Gothic, sans-serif;
+            font-style: normal;
+           }
+           h2.ex7{
+            font-family: Times New Roman, Georgia, serif;
+            font-style: italic;
+           }
+           p.ex7{
+            font-family: Times New Roman, Georgia, serif;
+            font-style: oblique;
+           }
+           
