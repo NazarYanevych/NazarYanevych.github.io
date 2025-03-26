@@ -34,3 +34,7 @@ a {
             color: #00ea00;
             background-color:#fa2f2f;
         }
+        body.body5{
+            background-image: url("../images/ball.jpg");
+           }
+           
