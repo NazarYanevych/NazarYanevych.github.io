@@ -95,3 +95,7 @@ a {
            .block{
             color: magenta;
         }
+        #container {
+            width: 960px;
+            margin: auto;
+        }
