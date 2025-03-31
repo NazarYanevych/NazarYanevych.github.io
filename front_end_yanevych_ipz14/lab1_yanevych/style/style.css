@@ -118,3 +118,6 @@ a {
         li a {
             text-decoration: none;
         }
+        div + p {
+            background-color: yellow;
+        }
