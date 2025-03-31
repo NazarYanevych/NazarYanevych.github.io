@@ -92,36 +92,7 @@ a {
            font-family: arial, sans-serif;
            }
 
-
-
-           * {
-            margin: 0;
-            padding: 0;
+           .sel1 {
+            color: magenta;
         }
         
-        #container * {
-            border: 1px solid black;
-        }
-        
-        li a {
-            text-decoration: none;
-        }
-        
-        ul + p {
-            color: red;
-        }
-        
-        div > ul {
-            border: 1px solid black;
-        }
-        
-        ul ~ p {
-            color: red;
-        }
-        
-        a[title] {
-            color: green;
-        }
-        
-        a [href = "http: // everstudent .ua"] {color: #ffde00;  
-        } 
