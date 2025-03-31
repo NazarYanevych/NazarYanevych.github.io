@@ -125,6 +125,6 @@ a {
             background-color: yellow;
         }
         
-        div ~ p {
+        .green-bg {
             background-color: green;
         }
