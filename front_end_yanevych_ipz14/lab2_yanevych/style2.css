@@ -4,6 +4,9 @@ body {
 
 table {
     width: 40%;
+}
+
+.table1 {
     height: 200px;
     border-collapse: collapse;
     border: 4px solid purple;
@@ -32,7 +35,7 @@ th:first-child, td:first-child {
     width: 40%;
     border-collapse: separate;
     border-spacing: 20px;
-    border: solid;
+    border: none;
 }
 
 .table2 td {
