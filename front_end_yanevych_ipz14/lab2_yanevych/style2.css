@@ -35,7 +35,7 @@ th:first-child, td:first-child {
     width: 40%;
     border-collapse: separate;
     border-spacing: 20px;
-    border: solid;
+    border: none;
 }
 
 .table2 td {
@@ -47,9 +47,9 @@ th:first-child, td:first-child {
 }
 
 .table3 {
-    width: 100%;
+    width: 60%;
     border-collapse: separate;
-    border-spacing: 50px;
+    border-spacing: 20px;
     border: 2px solid red;
     outline: 2px solid gray;
     outline-offset: 2px;
