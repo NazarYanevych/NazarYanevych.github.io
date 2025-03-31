@@ -128,3 +128,7 @@ a {
         .green-bg {
             background-color: green;
         }
+
+        a[title] {
+            color: black;
+        }
