@@ -92,7 +92,12 @@ a {
            font-family: arial, sans-serif;
            }
 
-           .block {
+           :root {
+            font-family: Arial, sans-serif;
+            --red-color: red;
+        }
+        
+        .block {
             color: magenta;
         }
         
@@ -100,8 +105,9 @@ a {
             width: 500px;
             margin: 20px auto;
             border: 2px solid black;
+            color: var(--red-color);
         }
-        :root { --red-color: red; }
+        
         .red-text {
             color: var(--red-color);
         }
