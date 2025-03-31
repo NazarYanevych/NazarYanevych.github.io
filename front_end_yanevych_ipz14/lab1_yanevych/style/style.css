@@ -92,10 +92,12 @@ a {
            font-family: arial, sans-serif;
            }
 
-           .block{
+           .block {
             color: magenta;
         }
+        
         #container {
             width: 500px;
-            margin: auto;
+            margin: 20px auto;
+            border: 2px solid black;
         }
