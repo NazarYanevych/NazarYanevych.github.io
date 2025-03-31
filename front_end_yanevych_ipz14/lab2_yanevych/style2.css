@@ -65,3 +65,37 @@ th:first-child, td:first-child {
 .table3 tr:first-child td:first-child {
     border: 2px solid cyan;
 }
+
+.table4 {
+    width: 40%;
+    border-collapse: separate;
+    border-spacing: 10px;
+    border: 2px solid black;
+}
+
+.table4 td {
+    border: 2px solid black;
+    padding: 0;
+    height: 50px;
+    width: 150px;
+}
+
+/* Перший рядок — текст по центру */
+.table4 tr:first-child td {
+    text-align: center !important;
+}
+
+/* Другий рядок — текст зліва */
+.table4 tr:nth-child(2) td {
+    text-align: left !important;
+}
+
+/* Колір тексту для Data1 (голубий) */
+.table4 tr:first-child td:first-child {
+    color: cyan !important;
+}
+
+/* Колір тексту для Data6 (рожевий) */
+.table4 tr:nth-child(2) td:last-child {
+    color: pink !important;
+}
