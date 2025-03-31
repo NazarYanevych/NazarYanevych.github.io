@@ -61,3 +61,14 @@ th:first-child, td:first-child {
     text-align: left;
     height: 50px;
 }
+
+/* Збільшуємо ширину для Data1 і Data2 (перші дві комірки першого рядка) */
+.table3 tr:first-child td:nth-child(1),
+.table3 tr:first-child td:nth-child(2) {
+    width: 200px;
+}
+
+/* Змінюємо колір кордону для Data1 (перша комірка першого рядка) */
+.table3 tr:first-child td:first-child {
+    border: 2px solid cyan;
+}
