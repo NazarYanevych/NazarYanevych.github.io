@@ -45,3 +45,20 @@ th:first-child, td:first-child {
     width: 100px;
     text-align: center;
 }
+
+
+.table3 {
+    width: 40%;
+    border-collapse: separate;
+    border-spacing: 20px; 
+    border: 2px solid red; 
+    outline: 2px solid gray; 
+    outline-offset: 2px; 
+}
+
+.table3 td {
+    border: 2px solid red; 
+    padding: 0; 
+    text-align: center;
+    height: 50px; 
+}
