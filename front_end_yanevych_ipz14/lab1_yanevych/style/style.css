@@ -132,3 +132,6 @@ a {
         a[title] {
             color: black;
         }
+        input[type="radio"]:checked {
+            border: 1px solid rgb(84, 83, 102);
+        }
