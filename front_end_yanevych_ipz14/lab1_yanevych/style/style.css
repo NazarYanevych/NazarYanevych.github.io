@@ -95,6 +95,8 @@ a {
 
 
 
+
+
            :root {
             font-family: Arial, sans-serif;
             --red-color: red;
@@ -114,10 +116,11 @@ a {
         .red-text {
             color: var(--red-color);
         }
-
+        
         li a {
             text-decoration: none;
         }
+        
         div + p {
             background-color: yellow;
         }
