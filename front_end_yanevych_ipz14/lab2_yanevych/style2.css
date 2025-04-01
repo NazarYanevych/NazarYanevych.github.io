@@ -149,8 +149,10 @@ th:first-child, td:first-child {
 }
 
 .table7 td, .table7 th {
-    min-width: 80px;
-    min-height: 40px;
+    padding: 0; 
+    height: 1px; 
+    line-height: 1; 
+    border: 1px solid black; 
 }
 
 
