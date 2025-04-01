@@ -99,3 +99,38 @@ th:first-child, td:first-child {
 .table4 tr:nth-child(2) td:last-child {
     color: pink !important;
 }
+.table5 {
+    width: 40%;
+    border-collapse: collapse; /* Без розмежувань між комірками */
+    border: 2px solid black;
+}
+
+.table5 td {
+    border: 2px solid black;
+    padding: 0;
+    height: 50px;
+    width: 150px;
+}
+
+/* Data1–Data3 (перший рядок) — зліва */
+.table5 tr:first-child td {
+    text-align: left;
+}
+
+/* Data4, Data6 (другий рядок, перша і третя комірки) — зліва */
+.table5 tr:nth-child(2) td:nth-child(1),
+.table5 tr:nth-child(2) td:nth-child(3) {
+    text-align: left;
+}
+
+/* Data5 (другий рядок, друга комірка) — по центру, світло-зелений */
+.table5 tr:nth-child(2) td:nth-child(2) {
+    text-align: center;
+    color: lightgreen;
+}
+
+/* Data7–Data9 (третій рядок) — по центру, зелений */
+.table5 tr:nth-child(3) td {
+    text-align: center;
+    color: green;
+}
