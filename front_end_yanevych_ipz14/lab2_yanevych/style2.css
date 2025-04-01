@@ -126,11 +126,11 @@ th:first-child, td:first-child {
 /* Data5 (другий рядок, друга комірка) — по центру, світло-зелений */
 .table5 tr:nth-child(2) td:nth-child(2) {
     text-align: center;
-    color: lightgreen;
+    background-color: lightgreen;
 }
 
 /* Data7–Data9 (третій рядок) — по центру, зелений */
 .table5 tr:nth-child(3) td {
     text-align: center;
-    color: green;
+    background-color: green;
 }
