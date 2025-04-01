@@ -149,7 +149,7 @@ th:first-child, td:first-child {
     height: 30px;
 }
 
-/* Перша комірка першого рядка порожня */
-.table6 tr:first-child th:first-child {
+/* Прибираємо бордери для порожніх комірок у першому стовпці (крім заголовка) */
+.table6 tr:not(:first-child) td:first-child {
     border: none;
 }
