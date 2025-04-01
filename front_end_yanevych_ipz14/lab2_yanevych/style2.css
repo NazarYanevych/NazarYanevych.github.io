@@ -147,16 +147,3 @@ th:first-child, td:first-child {
     width: 150px;
     text-align: center;
 }
-
-/* Стиль для підзаголовка "Середнє значення" */
-.table6 .subheader {
-    font-size: 0.8em;
-    color: #555;
-}
-
-/* Стиль для порожньої комірки без меж */
-.table6 .empty-space {
-    display: block;
-    height: 20px; /* Висота порожнього простору */
-    border: none !important;
-}
