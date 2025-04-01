@@ -148,13 +148,34 @@ th:first-child, td:first-child {
     text-align: center;
 }
 
-.table7 td, .table7 th {
-    padding: 0; 
-    height: 1px; 
-    line-height: 1; 
-    border: 1px solid black; 
+.table7 {
+    border-collapse: collapse;
+    width: 100%;
 }
 
+.table7 td, .table7 th {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: left;
+}
+
+.table7 td:first-child {
+    background-color: blue;
+    color: white;
+    text-align: left;
+}
+
+.table7 td[colspan="2"] {
+    text-align: left;
+}
+
+.table7 td[colspan="2"]:last-child {
+    background-color: pink;
+}
+
+.table7 tr:last-child th {
+    background-color: crimson;
+}
 
 
 
