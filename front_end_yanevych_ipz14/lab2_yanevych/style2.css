@@ -101,12 +101,12 @@ th:first-child, td:first-child {
 }
 .table5 {
     width: 40%;
-    border-collapse: collapse; /* Без розмежувань між комірками */
+    border-collapse: collapse;
     border: 2px solid black;
 }
 
 .table5 td {
-    border: 2px solid black;
+    border: none; /* Прибираємо бордери між комірками */
     padding: 0;
     height: 50px;
     width: 150px;
@@ -123,13 +123,13 @@ th:first-child, td:first-child {
     text-align: left;
 }
 
-/* Data5 (другий рядок, друга комірка) — по центру, світло-зелений */
+/* Data5 (другий рядок, друга комірка) — по центру, світло-зелений фон */
 .table5 tr:nth-child(2) td:nth-child(2) {
     text-align: center;
     background-color: lightgreen;
 }
 
-/* Data7–Data9 (третій рядок) — по центру, зелений */
+/* Data7–Data9 (третій рядок) — по центру, зелений фон */
 .table5 tr:nth-child(3) td {
     text-align: center;
     background-color: green;
