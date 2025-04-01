@@ -155,8 +155,9 @@ th:first-child, td:first-child {
 
 .table7 td, .table7 th {
     border: 1px solid black;
-    padding: 5px;
+    padding: 3px;
     text-align: left;
+    height: 25px;
 }
 
 .table7 td:first-child {
@@ -174,10 +175,4 @@ th:first-child, td:first-child {
 
 .table7 tr:last-child th:last-child {
     background-color: crimson;
-}
-
-.table7 tr:first-child td {
-    height: 1px;
-    padding: 0;
-    line-height: 1;
 }
