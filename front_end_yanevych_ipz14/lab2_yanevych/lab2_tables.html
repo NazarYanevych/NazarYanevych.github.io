@@ -119,25 +119,36 @@
     </table>
 
     <p>Таблиця 6.</p>
-<table class="table7">
-<tr>
-    <td>Data</td>
-    <td colspan="2">Data</td>
-    <td>Data</td>
-</tr>
-<tr>
-    <th rowspan="1">Data</th>
-    <th rowspan="2">Data</th>
-    <td colspan="2">Data</td>
-    <td>Data</td>
-</tr>
-<tr>
-    <td></td>
-    <td></td>
-    <td></td>
-</tr>
-</table>
-
+    <table class="table7" border="1">
+        <tr>
+          <!-- РЯДОК 1: 5 стовпців, 
+               але друга комірка займає два стовпці (colspan="2"). -->
+          <td>Data</td>                  <!-- кол. №1 -->
+          <td colspan="2">Data</td>      <!-- кол. №2 і №3 -->
+          <td>Data</td>                  <!-- кол. №4 -->
+          <td>Data</td>                  <!-- кол. №5 -->
+        </tr>
+        <tr>
+          <!-- РЯДОК 2: 5 стовпців, 
+               але перша клітинка має rowspan="1", друга — rowspan="2". -->
+          <th rowspan="1">Data</th>      <!-- кол. №1 (тільки цей рядок) -->
+          <th rowspan="2">Data</th>      <!-- кол. №2 (цей і наступний рядок) -->
+          <td colspan="2">Data</td>      <!-- кол. №3 і №4 -->
+          <td>Data</td>                  <!-- кол. №5 -->
+        </tr>
+        <tr>
+          <!-- РЯДОК 3: 
+               кол. №1 вільна, бо rowspan="1" не перекриває третій рядок,
+               кол. №2 пропускаємо, бо там rowspan="2" із другого рядка,
+               а далі йдуть кол. №3, №4 і №5. -->
+          <td></td>                      <!-- кол. №1 -->
+          <!-- кол. №2 пропущена (зайнята rowspan="2") -->
+          <td></td>                      <!-- кол. №3 -->
+          <td></td>                      <!-- кол. №4 -->
+          <td></td>                      <!-- кол. №5 -->
+        </tr>
+      </table>
+      
 
 </body>
 </html>
