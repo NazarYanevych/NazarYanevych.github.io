@@ -149,7 +149,10 @@ th:first-child, td:first-child {
     height: 30px;
 }
 
-/* Прибираємо бордери для порожніх комірок у "Середнє значення" */
-.table6 tr:last-child td:not(:first-child) {
+/* Прибираємо бордери для порожніх комірок */
+.table6 tr:first-child th:first-child,
+.table6 tr:last-child th:first-child,
+.table6 tr:last-child td:nth-child(3),
+.table6 tr:last-child td:last-child {
     border: none;
 }
