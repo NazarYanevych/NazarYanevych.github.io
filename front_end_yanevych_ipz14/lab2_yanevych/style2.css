@@ -148,6 +148,11 @@ th:first-child, td:first-child {
     text-align: center;
 }
 
+.table7 td, .table7 th {
+    min-width: 80px;
+    min-height: 40px;
+}
+
 
 
 
