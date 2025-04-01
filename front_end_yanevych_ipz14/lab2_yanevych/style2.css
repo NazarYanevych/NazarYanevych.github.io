@@ -138,21 +138,15 @@ th:first-child, td:first-child {
 .table6 {
     width: 40%;
     border-collapse: collapse;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
-.table6 th,
-.table6 td {
-    border: 1px solid black;
-    padding: 5px;
+.table6 th, .table6 td {
+    border: 2px solid black;
     text-align: center;
-    height: 30px;
+    padding: 8px;
 }
 
-/* Прибираємо бордери для порожніх комірок */
-.table6 tr:first-child th:first-child,
-.table6 tr:last-child th:first-child,
-.table6 tr:last-child td:nth-child(3),
-.table6 tr:last-child td:last-child {
-    border: none;
+.table6 th {
+    background-color: lightgray;
 }
