@@ -151,5 +151,10 @@ th:first-child, td:first-child {
 
 /* Прибираємо бордери для порожніх комірок у першому стовпці (крім заголовка) */
 .table6 tr:not(:first-child) td:first-child {
-    border: none;
+    border-right: none;
+}
+
+/* Прибираємо правий бордер для "Середнє значення", щоб не виходити за стовпець */
+.table6 tr:nth-child(2) td:nth-child(2) {
+    border-right: none;
 }
