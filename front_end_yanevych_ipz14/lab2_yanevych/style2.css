@@ -136,7 +136,7 @@ th:first-child, td:first-child {
 }
 
 .table6 {
-    width: 40%;
+    width: 50%;
     border-collapse: collapse;
     border: 2px solid black;
 }
@@ -149,4 +149,9 @@ th:first-child, td:first-child {
 
 .table6 th {
     background-color: lightgray;
+}
+
+.table6 tr:nth-child(2) td {
+    font-weight: bold;
+    background-color: #f0f0f0;
 }
