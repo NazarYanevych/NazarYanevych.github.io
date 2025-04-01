@@ -149,12 +149,7 @@ th:first-child, td:first-child {
     height: 30px;
 }
 
-/* Прибираємо бордери для порожніх комірок у першому стовпці (крім заголовка) */
-.table6 tr:not(:first-child) td:first-child {
-    border-right: none;
-}
-
-/* Прибираємо правий бордер для "Середнє значення", щоб не виходити за стовпець */
-.table6 tr:nth-child(2) td:nth-child(2) {
-    border-right: none;
+/* Прибираємо бордери для порожніх комірок у "Середнє значення" */
+.table6 tr:last-child td:not(:first-child) {
+    border: none;
 }
