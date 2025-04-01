@@ -134,3 +134,22 @@ th:first-child, td:first-child {
     text-align: center;
     background-color: green;
 }
+
+.table6 {
+    width: 40%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.table6 th,
+.table6 td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+    height: 30px;
+}
+
+/* Перша комірка першого рядка порожня */
+.table6 tr:first-child th:first-child {
+    border: none;
+}
