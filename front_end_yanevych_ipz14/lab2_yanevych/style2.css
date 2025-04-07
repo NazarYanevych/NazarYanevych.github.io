@@ -180,14 +180,14 @@ th:first-child, td:first-child {
 .table8 {
     border-collapse: collapse;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 20px auto;
     border: 2px double black;
 }
 
 .table8 td {
     border: 2px double black;
-    padding: 2px;
+    padding: 1px;
     vertical-align: top;
     text-align: center;
     font-size: 10px;
@@ -201,9 +201,9 @@ th:first-child, td:first-child {
 
 .nested-table1 td {
     border: 1px solid pink;
-    padding: 1px;
+    padding: 0px;
     text-align: center;
-    line-height: 0.9;
+    line-height: 0.8;
     font-size: 10px;
 }
 
@@ -215,15 +215,15 @@ th:first-child, td:first-child {
 
 .nested-table2 td {
     border: 1px solid lightblue;
-    padding: 1px;
+    padding: 0px;
     text-align: center;
-    line-height: 0.9;
+    line-height: 0.8;
     font-size: 10px;
 }
 
 .subcaption {
     font-weight: bold;
     text-align: center;
-    margin-top: 1px;
+    margin-top: 0px;
     font-size: 10px;
 }
