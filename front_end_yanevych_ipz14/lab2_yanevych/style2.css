@@ -151,11 +151,11 @@ th:first-child, td:first-child {
 .table7 {
     border-collapse: collapse;
     width: 100%;
-    border: 1px solid rgb(0, 23, 128);
+    border: 2px solid rgb(0, 23, 128);
 }
 
 .table7 td, .table7 th {
-    border: 1px solid rgb(0, 23, 128);
+    border: 2px solid rgb(0, 23, 128);
     padding: 3px;
     text-align: left;
     height: 25px;
