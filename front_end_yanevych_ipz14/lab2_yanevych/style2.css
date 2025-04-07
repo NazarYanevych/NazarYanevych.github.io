@@ -177,3 +177,47 @@ th:first-child, td:first-child {
 .table7 tr:last-child th:last-child {
     background-color: rgb(225, 0, 255);
 }
+.table8 {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border: 2px double black;
+}
+
+.table8 td {
+    border: 2px double black;
+    padding: 10px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.nested-table1 {
+    border-collapse: collapse;
+    width: 100%;
+    border: 3px solid pink;
+}
+
+.nested-table1 td {
+    border: 1px solid pink;
+    padding: 8px;
+    text-align: center;
+}
+
+.nested-table2 {
+    border-collapse: collapse;
+    width: 100%;
+    border: 3px solid lightblue;
+}
+
+.nested-table2 td {
+    border: 1px solid lightblue;
+    padding: 8px;
+    text-align: center;
+}
+
+.subcaption {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
+}
