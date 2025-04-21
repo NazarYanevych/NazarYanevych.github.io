@@ -7,8 +7,14 @@
     <script>
         function showBio(num) {
             document.getElementById("bioFrame").src = "bio" + num + ".html";
-            document.getElementById("audioPlayer").src = "audio/audio" + num + ".mp3";
-            document.getElementById("videoPlayer").src = "video/video" + num + ".mp4";
+
+            const audio = document.getElementById("audioPlayer");
+            audio.src = "audio/audio" + num + ".mp3";
+            audio.load();
+
+            const video = document.getElementById("videoPlayer");
+            video.src = "video/video" + num + ".mp4";
+            video.load();
 
             document.getElementById("audioDownload").href = "audio/audio" + num + ".mp3";
             document.getElementById("videoDownload").href = "video/video" + num + ".mp4";
@@ -32,18 +38,17 @@
             </td>
         </tr>
     </table>
-    
 
     <h3>Аудіо:</h3>
-    <audio controls>
-        <source id="audioPlayer" src="audio/audio1.mp3" type="audio/mpeg">
+    <audio id="audioPlayer" controls>
+        <source src="audio/audio1.mp3" type="audio/mpeg">
     </audio>
     <br>
     <a id="audioDownload" href="audio/audio1.mp3" download>Скачати аудіо</a>
 
     <h3>Відео:</h3>
-    <video controls width="320">
-        <source id="videoPlayer" src="video/video1.mp4" type="video/mp4">
+    <video id="videoPlayer" controls width="320">
+        <source src="video/video1.mp4" type="video/mp4">
     </video>
     <br>
     <a id="videoDownload" href="video/video1.mp4" download>Скачати відео</a>
