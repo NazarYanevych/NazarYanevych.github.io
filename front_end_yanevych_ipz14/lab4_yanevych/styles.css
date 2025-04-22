@@ -1,0 +1,31 @@
+div {
+    padding: 10px;
+  }
+  
+  .p1 {
+    margin-left: 0pt;
+    color: #2e8b57;
+    background-color: #f0fff0;
+    border: 2px solid #228b22;
+    text-indent: 20pt;
+    padding: 10px;
+  }
+  
+  .p2 {
+    margin-left: 60pt;
+    color: #00008b;
+    background-color: #e6f0ff;
+    border: 2px dashed #1e90ff;
+    text-indent: 30pt;
+    padding: 10px;
+  }
+  
+  .p3 {
+    margin-left: 120pt;
+    color: #8b0000;
+    background-color: #ffe4e1;
+    border: 2px dotted #dc143c;
+    text-indent: 40pt;
+    padding: 10px;
+  }
+  
