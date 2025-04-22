@@ -29,3 +29,68 @@ div {
     padding: 10px;
   }
   
+  
+
+
+
+
+
+
+  body {
+    font-family: sans-serif;
+    margin: 20px;
+  }
+  
+  div {
+    padding: 10px;
+    width: 200px;
+    height: 60px;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .static-box {
+    background-color: gray;
+    position: static;
+  }
+  
+  .relative-box {
+    background-color: orange;
+    position: relative;
+    left: 20px;
+    top: 10px;
+  }
+  
+  .absolute-container {
+    position: relative;
+    height: 120px;
+    background-color: #eee;
+  }
+  
+  .absolute-box {
+    background-color: crimson;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+  }
+  
+  .fixed-box {
+    background-color: teal;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 180px;
+    z-index: 1000;
+  }
+  
+  .inherit-container {
+    position: relative;
+  }
+  
+  .inherit-box {
+    background-color: purple;
+    position: inherit;
+    top: 10px;
+    left: 10px;
+  }
+  
