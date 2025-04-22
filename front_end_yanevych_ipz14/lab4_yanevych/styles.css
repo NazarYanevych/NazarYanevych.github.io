@@ -227,7 +227,7 @@ div {
     overflow: auto;
     height: 120%;
     text-indent: 15px;
-    background-color: #f9f0e3; /* Колір з bg_menu.gif */
+    background-color: #f1a944; /* Колір з bg_menu.gif */
     background-image: url("bg_menu.gif");
     background-attachment: fixed;
   }
