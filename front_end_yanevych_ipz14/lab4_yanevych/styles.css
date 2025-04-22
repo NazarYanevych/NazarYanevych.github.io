@@ -200,8 +200,9 @@ div {
   .page-task4 {
     background-image: url("ramka.gif");
     background-repeat: repeat-y;
-    background-position: left;
+    background-position: left top;
     background-attachment: fixed;
+    height: 100vh;
   }
   
   
