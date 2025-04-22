@@ -89,3 +89,51 @@ div {
     left: 10px;
   }
   
+
+
+
+
+
+
+
+ 
+  .container2 {
+    border: 2px dashed #ccc;
+    padding: 10px;
+    overflow: hidden;
+  }
+  
+
+  .float-left {
+    background-color: #0074D9;
+    float: left;
+  }
+  
+  .float-right {
+    background-color: #2ECC40;
+    float: right;
+  }
+  
+  .float-none {
+    background-color: #FF851B;
+    float: none;
+    clear: both;
+  }
+  
+  .inherit-container {
+    float: left;
+    margin-top: 20px;
+  }
+  
+  .float-inherit {
+    background-color: #B10DC9;
+    float: inherit;
+  }
+  
+  .text {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 40px;
+  }
+  
