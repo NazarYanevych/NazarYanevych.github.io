@@ -162,3 +162,33 @@ ul li {
 .matrix-box:hover {
   transform: matrix(1.2, 0.2, 0.3, 1, 0, 0) rotate(3deg);
 }
+
+
+
+
+.transform3d-box {
+  width: 250px;
+  height: 120px;
+  margin: 40px auto;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  transform: matrix3d(
+    1, 0, 0, 0,
+    0.2, 1, 0.1, 0,
+    0.1, 0.1, 1, 0,
+    0, 0, 0, 1
+  );
+  transform-origin: center;
+  transition: transform 0.8s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.transform3d-box:hover {
+  transform: rotate3d(1, 1, 0, 30deg);
+}
