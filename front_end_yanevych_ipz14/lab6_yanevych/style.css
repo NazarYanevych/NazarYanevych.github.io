@@ -30,6 +30,13 @@ hgroup h1 {
   margin: 0;
   font-size: 2.5em;
   text-shadow: 2px 2px 4px #000;
+  transform: matrix(1, 0.2, 0.1, 1, 15, 5);
+  transform-origin: left center;
+  transition: transform 0.4s ease;
+}
+
+hgroup h1:hover {
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
 
 nav ul {
@@ -47,12 +54,12 @@ nav ul li a {
   border-radius: 5px;
   background: linear-gradient(to right, #4568dc, #b06ab3);
   text-shadow: 1px 1px 2px black;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transform-origin: center;
 }
 
 nav ul li a:hover {
-  background: linear-gradient(to right, #b06ab3, #4568dc);
-  transform: scale(1.1);
+  transform: scaleX(1.25) rotate(2deg);
 }
 
 main {
@@ -135,4 +142,24 @@ address a {
 
 ul li {
   text-shadow: 1px 1px 2px #999;
+}
+
+.matrix-box {
+  width: 200px;
+  height: 100px;
+  background: #f0c;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  border-radius: 12px;
+  transform: matrix(1, 0.2, 0.3, 1, 10, 10);
+  transform-origin: top left;
+  transition: transform 0.4s ease;
+}
+
+.matrix-box:hover {
+  transform: matrix(1.2, 0.2, 0.3, 1, 0, 0) rotate(3deg);
 }
