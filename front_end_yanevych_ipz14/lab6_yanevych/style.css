@@ -30,13 +30,12 @@ hgroup h1 {
   margin: 0;
   font-size: 2.5em;
   text-shadow: 2px 2px 4px #000;
-  transform: matrix(1, 0.2, 0.1, 1, 15, 5);
-  transform-origin: left center;
+  transform: none;
   transition: transform 0.4s ease;
 }
 
 hgroup h1:hover {
-  transform: matrix(1, 0, 0, 1, 0, 0);
+  transform: scale(1.1);
 }
 
 nav ul {
