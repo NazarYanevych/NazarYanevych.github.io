@@ -192,3 +192,10 @@ ul li {
 .transform3d-box:hover {
   transform: rotate3d(1, 1, 0, 30deg);
 }
+
+.transform3d-box img {
+  width: 180px;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
