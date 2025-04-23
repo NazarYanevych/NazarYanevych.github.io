@@ -1,0 +1,80 @@
+/* Базові стилі */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background: #f9f9f9;
+    color: #333;
+  }
+  
+  header, nav, main, section, article, aside, footer, figure, figcaption, address {
+    display: block;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  /* Навігація */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #0066cc;
+  }
+  
+  h1, h2, h3 {
+    margin-top: 0;
+  }
+  
+  /* Картинка */
+  figure {
+    margin: 0;
+    text-align: center;
+  }
+  
+  figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+  
+  figcaption {
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+  
+  /* Властивість quotes */
+  blockquote {
+    quotes: "«" "»" "„" "“";
+  }
+  
+  mark {
+    background-color: #ff0;
+    color: #000;
+    padding: 0 4px;
+  }
+  
+  /* Footer */
+  footer {
+    font-size: 0.9em;
+    background: #e0e0e0;
+  }
+  
+  address {
+    font-style: normal;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+    }
+  }
+  
