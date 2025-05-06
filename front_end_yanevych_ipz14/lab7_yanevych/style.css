@@ -9,19 +9,20 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 5px;
-    height: 50px;
-    box-sizing: border-box;
+    height: 60px;
     border: 1px solid black;
   }
   
   .header input {
-    width: 80px;
-    height: 20px;
+    width: 120px;
+    height: 25px;
+    margin-left: 10px;
   }
   
   .header .box {
-    padding: 5px 10px;
-    background: gold;
+    background-color: gold;
+    padding: 5px 15px;
+    font-weight: bold;
   }
   
   .content {
@@ -32,35 +33,40 @@ body {
   .col {
     flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    padding: 5px;
+    border: 1px solid black;
   }
   
-  .blue {
-    background-color: blue;
-    color: white;
-  }
-  
-  .red {
-    background-color: red;
-    color: black;
-  }
-  
-  .white {
-    background-color: white;
-    color: black;
-  }
+  .blue { background-color: #3399ff; color: white; }
+  .red { background-color: #ff6666; }
+  .white { background-color: white; }
   
   .footer {
     height: 50px;
     background-color: gold;
     display: flex;
     align-items: center;
-    justify-content: left;
     padding-left: 10px;
     border: 1px solid black;
+    font-weight: bold;
+  }
+  
+  .block {
+    display: inline-block;
+    background-color: #eee;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .rotated {
+    transform: rotate(-5deg);
+    display: inline-block;
+    color: #222;
+    background-color: #ffc;
   }
   
