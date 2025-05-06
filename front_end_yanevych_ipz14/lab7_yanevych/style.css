@@ -10,7 +10,7 @@
   
   .header {
     height: 15%;
-    background-color: gold;
+    background-color: #D4AF37; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,9 +39,20 @@
     overflow: hidden;
   }
   
-  .blue { background-color: #3399ff; color: white; }
-  .red { background-color: #ff6666; }
-  .white { background-color: white; }
+  .blue {
+    background-color: #4FB3BF;
+    color: white;
+  }
+  
+  .red {
+    background-color: #E76F51; 
+    color: white;
+  }
+  
+  .white {
+    background-color: #F0F0F0; 
+    color: #333;
+  }
   
   .scrollable {
     overflow-y: scroll;
@@ -62,7 +73,7 @@
   
   .footer {
     height: 15%;
-    background-color: gold;
+    background-color: #D4AF37;
     display: flex;
     align-items: center;
     justify-content: center;
