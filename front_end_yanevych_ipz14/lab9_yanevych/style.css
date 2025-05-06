@@ -101,3 +101,29 @@ body {
     font-size: 12pt;
   }
 }
+
+
+
+
+
+.responsive-box {
+  width: calc(100% - 100px);
+  height: 100px;
+  background-color: lightblue;
+  margin: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.custom-tooltip::after {
+  content: attr(data-tooltip);
+  display: block;
+  color: white;
+  background: black;
+  padding: 5px;
+  margin-top: 5px;
+  width: max-content;
+  font-size: 14px;
+  font-family: sans-serif;
+}
