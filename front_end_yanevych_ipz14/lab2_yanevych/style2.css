@@ -80,22 +80,18 @@ th:first-child, td:first-child {
     width: 150px;
 }
 
-/* Перший рядок — текст по центру */
 .table4 tr:first-child td {
     text-align: center !important;
 }
 
-/* Другий рядок — текст зліва */
 .table4 tr:nth-child(2) td {
     text-align: left !important;
 }
 
-/* Колір тексту для Data1 (голубий) */
 .table4 tr:first-child td:first-child {
     color: cyan !important;
 }
 
-/* Колір тексту для Data6 (рожевий) */
 .table4 tr:nth-child(2) td:last-child {
     color: pink !important;
 }
@@ -106,30 +102,27 @@ th:first-child, td:first-child {
 }
 
 .table5 td {
-    border: none; /* Прибираємо бордери між комірками */
+    border: none; 
     padding: 0;
     height: 50px;
     width: 150px;
 }
 
-/* Data1–Data3 (перший рядок) — зліва */
+
 .table5 tr:first-child td {
     text-align: left;
 }
 
-/* Data4, Data6 (другий рядок, перша і третя комірки) — зліва */
 .table5 tr:nth-child(2) td:nth-child(1),
 .table5 tr:nth-child(2) td:nth-child(3) {
     text-align: left;
 }
 
-/* Data5 (другий рядок, друга комірка) — по центру, світло-зелений фон */
 .table5 tr:nth-child(2) td:nth-child(2) {
     text-align: center;
     background-color: lightgreen;
 }
 
-/* Data7–Data9 (третій рядок) — по центру, зелений фон */
 .table5 tr:nth-child(3) td {
     text-align: center;
     background-color: green;
