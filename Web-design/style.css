@@ -25,17 +25,7 @@ body {
   border: 2px solid #000;
 }
 
-.name.horizontal {
-  font-family: 'Comic Neue', cursive;
-  font-size: 20px;
-}
 
-.name.vertical {
-  font-family: 'Comic Neue', cursive;
-  font-size: 20px;
-  line-height: 1.2;
-  white-space: pre-line;
-}
 
 .color-sample {
   width: 80px;
@@ -68,7 +58,7 @@ body {
 }
 
 .font-sample.comic {
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Comic Relief', cursive;
 }
 
 .font-sample.balsamiq {
