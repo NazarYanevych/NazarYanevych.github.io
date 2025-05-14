@@ -69,3 +69,15 @@ color: #050505;
 font-weight: 400;
 font-family: "Balsamiq Sans";
 }
+
+.logo-column .logo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid #000;
+  margin-bottom: 10px;
+}
+
+.logo-column .gif {
+  border-color: #888;
+}
