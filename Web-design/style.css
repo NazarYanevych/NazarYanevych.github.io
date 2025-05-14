@@ -57,9 +57,15 @@ body {
 }
 
 .font-sample.comic {
-  font-family: 'Comic Relief', cursive;
+font-size: 22px;
+color: #050505;
+font-weight: 400;
+font-family: "Comic Relief";
 }
 
 .font-sample.balsamiq {
-  font-family: 'Balsamiq Sans', cursive;
+font-size: 22px;
+color: #050505;
+font-weight: 400;
+font-family: "Balsamiq Sans";
 }
