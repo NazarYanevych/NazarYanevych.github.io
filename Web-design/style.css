@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: 'Balsamiq Sans', sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logo-column .logo {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+
+.name.horizontal {
+  font-family: 'Comic Neue', cursive;
+  font-size: 20px;
+}
+
+.name.vertical {
+  font-family: 'Comic Neue', cursive;
+  font-size: 20px;
+  line-height: 1.2;
+  white-space: pre-line;
+}
+
+.color-sample {
+  width: 80px;
+  height: 40px;
+  border: 1px solid #000;
+  margin-top: 10px;
+}
+
+.description {
+  background-color: #808080;
+  padding: 15px;
+  color: #fff;
+}
+
+.description h2 {
+  color: #000;
+}
+
+.description-text {
+  font-size: 16px;
+}
+
+.fonts h2 {
+  margin-top: 0;
+}
+
+.font-sample {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.font-sample.comic {
+  font-family: 'Comic Neue', cursive;
+}
+
+.font-sample.balsamiq {
+  font-family: 'Balsamiq Sans', cursive;
+}
