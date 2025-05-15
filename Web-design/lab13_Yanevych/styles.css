@@ -1,0 +1,146 @@
+body {
+  font-family: 'Balsamiq Sans', cursive;
+  background-color: #A1E3D8;
+  margin: 0;
+  padding: 0;
+  color: #010A0A;
+}
+
+h2, .nav-btn, .download-btn {
+  font-family: 'Comic Neue', cursive;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  background-color: #005555;
+  padding: 1rem;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.nav-btn, .projects-btn, .open-project, .download-btn {
+  background-color: #069A8E;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover, .download-btn:hover {
+  transform: scale(1.1);
+  background-color: #089393;
+}
+
+.projects-btn:hover {
+  background-color: #010A0A;
+  color: black;
+}
+
+.open-project:hover {
+  border: 1px solid black;
+  color: black;
+  background-color: #A1E3D8;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.intro-img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.projects {
+  background-color: #069A8E;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: filter 0.3s ease;
+}
+
+.open-project[data-project="1"]:hover ~ .project img[src*="project1"] {
+  filter: brightness(1.2);
+}
+
+.open-project[data-project="2"]:hover ~ .project img[src*="project2"] {
+  filter: brightness(1.2);
+}
+
+.resume {
+  background-color: #005555;
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.contact {
+  background-color: #069A8E;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #fff;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-box {
+  background-color: #005555;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: white;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .intro {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .nav {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .project img {
+    max-width: 100%;
+  }
+}
