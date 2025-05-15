@@ -3,55 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Яневич Назарій</title>
+  <title>Яневич Назарій – Портфоліо</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Balsamiq+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <div class="logo">
-        <img src="logo.png" alt="Логотип">
-        <p>Яневич</p>
-      </div>
-      <nav class="nav">
-        <button class="nav-btn">Про мене</button>
-        <button class="nav-btn">Портфоліо</button>
-        <button class="nav-btn">Резюме</button>
-        <button class="nav-btn">Контакти</button>
-      </nav>
-    </header>
+  <header class="header">
+    <div class="logo">Яневич</div>
+    <nav class="nav">
+      <button class="btn about">Про мене</button>
+      <button class="btn portfolio">Портфоліо</button>
+      <button class="btn resume">Резюме</button>
+      <button class="btn contact">Контакти</button>
+    </nav>
+  </header>
 
+  <main class="grid-container">
     <section class="intro">
-      <img src="cat.png" alt="Кіт" class="intro-img">
+      <img src="cat.png" alt="Кіт у шапці" class="cat-img" />
       <div class="intro-text">
-        <p>Привіт! Мене звати Яневич Назарій, я студент спеціальності "Інженерія програмного забезпечення"...</p>
-        <button class="projects-btn">Мої проєкти...</button>
+        <p>
+          Привіт! Мене звати Яневич Назарій...<br />
+          Займаюся розробкою веб-сайтів...<br />
+          Зараз ви переглядаєте мою 10-13 лабораторні роботи!
+        </p>
+        <button class="btn projects-btn">Мої проєкти...</button>
       </div>
     </section>
 
     <section class="projects">
       <h2>Проекти</h2>
-      <div class="project"><img src="project1.png" alt="Проєкт 1"></div>
-      <button class="open-project" data-project="1">Відкрити проект 1</button>
-      <div class="project"><img src="project2.png" alt="Проєкт 2"></div>
-      <button class="open-project" data-project="2">Відкрити проект 2</button>
-    </section>
-
-    <section class="resume">
-      <h2>Резюме</h2>
-      <p>Ім'я та прізвище: Яневич Назарій<br>...
-      <button class="download-btn">Завантажити резюме</button>
-    </section>
-
-    <section class="contact">
-      <h2>Контактна інформація</h2>
-      <div class="contact-info">
-        <p class="contact-box">nazarii.yanevych.24@pnu.edu.ua</p>
-        <p class="contact-box">+380 97 204 7620</p>
-        <p class="contact-box">https://nazaryanevych.github.io</p>
+      <div class="project">
+        <img src="project1.png" alt="Проект 1" class="project-img" />
+        <button class="btn project-btn" id="project1">Відкрити проект 1</button>
+      </div>
+      <div class="project">
+        <img src="project2.png" alt="Проект 2" class="project-img" />
+        <button class="btn project-btn" id="project2">Відкрити проект 2</button>
       </div>
     </section>
-  </div>
+
+    <section class="resume-section">
+      <h2>Резюме</h2>
+      <div class="resume">
+        <p>Ім'я: Яневич Назарій<br>
+        Email: nazarii.yanevych.24@pnu.edu.ua<br>
+        Мета: Отримати посаду Junior Developer...</p>
+        <button class="btn download-btn">Завантажити резюме</button>
+      </div>
+    </section>
+
+    <section class="contacts">
+      <h2>Контактна інформація</h2>
+      <div class="contact-box">nazarii.yanevych.24@pnu.edu.ua</div>
+      <div class="contact-box">+380 97 204 7620</div>
+      <div class="contact-box">https://nazariyanevych.github.io</div>
+    </section>
+  </main>
 </body>
 </html>
