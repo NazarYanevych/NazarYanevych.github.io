@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автосалон</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Автомобілі</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Домашня сторінка</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Акції</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Бренди автомобілів
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">BMV</a></li>
+                            <li><a class="dropdown-item" href="#">AUDI</a></li>
+                            <li><a class="dropdown-item" href="#">Mercedes</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Opel</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Контакти</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Пошук" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Пошук</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="container mt-5 mb-5">
+            <h2 class="text-center mb-4">Автомобілі</h2>
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkMa5nc8TsQv49NV66I15S_E70CIlWUjxLCg&s" class="d-block w-100" alt="Автомобіль 1">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>BMV M серії</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.infocar.ua/i/12/5632/1400x936.jpg" class="d-block w-100" alt="Автомобіль 2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>BMW 3 Series Sedan</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://lh5.googleusercontent.com/proxy/1ooiwR4jH96e08HEYummn9mi63iyHV6YoLFfMTRVIvKChwbhSjlz2omD4UioxuWjhHuL4P0ulcNZGuZeLLBFLVeQDqsmAfJwdm6AYtNryfYMZJNUWj5LcmvXn4i20IBjxAoXKIg1GP_MRLev3igI9wsNUf7uyw" class="d-block w-100" alt="Автомобіль 3">
+                        <div class="carousel-caption d-none d-md-block text-dark">
+                            <h5>BMW 530 D</h5>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="container mt-5 mb-5">
+            <h2 class="text-center mb-4">Популярні марки</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100 car-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/2018_Audi_A7_S_Line_40_TDi_S-A_2.0.jpg/960px-2018_Audi_A7_S_Line_40_TDi_S-A_2.0.jpg" class="card-img-top" alt="Модель А">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Audi A7</h5>
+                            <a href="#" class="btn btn-info mt-auto">Детальніше</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 car-card">
+                        <img src="https://i.infocar.ua/i/2/6309/119903/1920x.jpg" class="card-img-top" alt="Модель Б">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Audi e-tron S Sportback (GE)</h5>
+                            <a href="#" class="btn btn-primary mt-auto">Детальніше</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 car-card">
+                        <img src="https://i.infocar.ua/i/12/5380/1400x936.jpg" class="card-img-top" alt="Модель В">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Audi A7 Sportback</h5>
+                            <a href="#" class="btn btn-warning mt-auto">Детальніше</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="welcome-section py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 mb-3 mb-md-0">
+                        <h2>Автомагазин</h2>
+                        <p>Знайдіть автомібль своєї мрії</p>
+                        <button type="button" class="btn btn-primary">Більше</button>
+                    </div>
+                    <div class="col-lg-6 col-md-8 mb-3 mb-md-0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Opel_Astra_L_1X7A6738.jpg/960px-Opel_Astra_L_1X7A6738.jpg" class="img-fluid rounded" alt="Сучасні Автомобілі">
+                    </div>
+                    <div class="col-lg-3 col-md-12 mt-3 mt-lg-0">
+                        <h4>Переваги:</h4>
+                        <ul>
+                            <li>Матричні фари Intelli-Lux</li>
+                            <li>16-дюймовий сенсорний HD екран</li>
+                            <li>Підігрів керма, передніх і задніх сидінь, лобового скла</li>
+                            <li>Передні сидіння AGR з електрорегулюванням, пам’яттю, масажем і вентиляцією</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mt-5 mb-5 text-center">
+            <h2 class="mb-4">Спеціальні пропозиції</h2>
+            <p>Спеціальні пропозиції</p>
+            <button type="button" class="btn btn-primary m-1">Opel Astra G</button>
+            <button type="button" class="btn btn-secondary m-1">Opel Astra H</button>
+            <button type="button" class="btn btn-success m-1">Opel Astra J</button>
+            <button type="button" class="btn btn-danger m-1">Opel Astra K</button>
+            <button type="button" class="btn btn-warning m-1">Opel Astra L</button>
+            <button type="button" class="btn btn-info m-1">Opel Astra F</button>
+            <button type="button" class="btn btn-light m-1">Opel Grandland </button>
+            <button type="button" class="btn btn-dark m-1">Combo Cargo</button>
+            <button type="button" class="btn btn-link m-1">Посилання</button>
+        </section>
+
+        <section class="container mt-5 mb-5">
+            <h2 class="text-center mb-4">Зв'яжіться з нами</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <form>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Email адреса</label>
+                            <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactSubject" class="form-label">Тема повідомлення</label>
+                            <select class="form-select" id="contactSubject">
+                                <option selected>Оберіть тему...</option>
+                                <option value="1">Купівля</option>
+                                <option value="2">Консультація</option>
+                                <option value="3">Підтримка</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Повідомлення</label>
+                            <textarea class="form-control" id="contactMessage" rows="4"></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="endw">
+                            <label class="form-check-label" for="endw">Натисніть для підтвердження</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Надіслати</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Автомобілі 2025</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
