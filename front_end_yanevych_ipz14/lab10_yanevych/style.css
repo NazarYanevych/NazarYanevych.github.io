@@ -1,0 +1,7 @@
+section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.carousel-control-prev-icon{
+    background-image: url(/front_end_yanevych_ipz14/lab10_yanevych/back.png);
+}
