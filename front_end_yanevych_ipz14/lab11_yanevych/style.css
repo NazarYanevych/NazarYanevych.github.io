@@ -3,3 +3,25 @@
       border: 2px solid #888;
       padding: 10px;
     }
+
+    .example::before {
+      content: "Початок: ";
+      color: green;
+      font-weight: bold;
+    }
+
+    .example::after {
+      content: "Кінець.";
+      color: red;
+      font-style: italic;
+    }
+
+    .example::first-letter {
+      font-size: 200%;
+      font-weight: bold;
+      color: darkblue;
+    }
+
+    .example::first-line {
+      background-color: #f0f0f0;
+    }
