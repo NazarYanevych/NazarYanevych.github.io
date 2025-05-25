@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Псевдокласи (варіант 5)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Форма з :valid / :invalid</h2>
+  <form>
+    <label>Email (обов'язковий):</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Ім’я (мін. 3 символи):</label><br>
+    <input type="text" name="name" minlength="3"><br><br>
+
+    <input type="submit" value="Надіслати">
+  </form>
+
+  <hr>
+
+  <h2>Список елементів (:first-child, :nth-of-type)</h2>
+  <ul>
+    <li>Перший</li>
+    <li>Другий</li>
+    <li>Третій</li>
+  </ul>
+
+  <hr>
+
+  <h2>Вибір варіанту (:checked)</h2>
+  <form>
+    <input type="radio" name="color" id="red" checked>
+    <label for="red">Червоний</label><br>
+
+    <input type="radio" name="color" id="green">
+    <label for="green">Зелений</label><br>
+
+    <input type="radio" name="color" id="blue">
+    <label for="blue">Синій</label>
+  </form>
+
+</body>
+</html>

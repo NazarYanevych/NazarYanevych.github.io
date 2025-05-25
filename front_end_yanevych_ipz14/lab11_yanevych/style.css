@@ -25,3 +25,50 @@
     .example::first-line {
       background-color: #f0f0f0;
     }
+    
+    
+    
+    a:link {
+      color: rgb(25, 0, 255);
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    a:hover {
+      color: darkorange;
+      text-decoration: underline;
+    }
+
+    a:active {
+      color: rgb(85, 243, 0);
+      font-weight: bold;
+    }
+
+
+    input:valid {
+      border: 2px solid green;
+      background-color: #eaffea;
+    }
+
+    input:invalid {
+      border: 2px solid red;
+      background-color: #ffeaea;
+    }
+
+    ul li:first-child {
+      font-weight: bold;
+      color: darkgreen;
+    }
+
+    ul li:nth-of-type(2) {
+      color: orange;
+      text-decoration: underline;
+    }
+
+    input[type="radio"]:checked + label {
+      font-weight: bold;
+      color: blue;
+    }
