@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <title>Завдання 1</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Форми</h1>
+
+    <fieldset>
+        <legend>1. Однорядкове текстове поле</legend>
+        <input type="text" name="name" placeholder="Введіть ім’я" maxlength="30" required />
+    </fieldset>
+
+    <fieldset>
+        <legend>2. Багаторядкова текстова область</legend>
+        <textarea name="message" rows="5" cols="30" placeholder="Повідомлення"></textarea>
+    </fieldset>
+
+    <fieldset>
+        <legend>3. Типи: password, email, range</legend>
+        <input type="password" name="pass" placeholder="Пароль" /><br/>
+        <input type="email" name="email" placeholder="Email" /><br/>
+        <label>Range: <input type="range" name="range" min="0" max="10" /></label>
+    </fieldset>
+
+    <fieldset>
+        <legend>4. Radio кнопки</legend>
+        Стать:<br/>
+        <input type="radio" name="gender" value="male" /> Чоловік<br/>
+        <input type="radio" name="gender" value="female"/> Жінка<br/><br/>
+
+        Колір:<br/>
+        <input type="radio" name="color" value="blue" checked/> Синій<br/>
+        <input type="radio" name="color" value="yellow"/> Жовтий<br/>
+
+        <br/>
+        <input type="submit" value="Відправити" />
+    </fieldset>
+
+    <fieldset>
+        <legend>6. Прапорці</legend>
+        <label><input type="checkbox" name="check" value="check1" />Прапорець 1</label><br/>
+        <label><input type="checkbox" name="check" value="check2" />Прапорець 2</label><br/>
+        <label><input type="checkbox" name="check" value="check3" />Прапорець 3</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>7. Випадаючий список (optgroup)</legend>
+        <select name="month">
+            <optgroup label="Місяці">
+                <option value="january">Січень</option>
+                <option value="february">Лютий</option>
+                <option value="may">Березень</option>
+                <option value="april">Квітень</option>
+                <option value="march">Травень</option>
+                <option value="june">Червень</option>
+            </optgroup>
+            <optgroup label="Місяці 2">
+                <option value="july">Липень</option>
+                <option value="august">Серпень</option>
+                <option value="september">Вересень</option>
+                <option value="october">Жовтень</option>
+                <option value="november">Листопад</option>
+                <option value="december">Грудень</option>
+            </optgroup>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>8. Список множинного вибору</legend>
+        <select name="languages" multiple size="4">
+            <option value="1">Перше</option>
+            <option value="2">Друге</option>
+            <option value="3">Третє</option>
+            <option value="4">Четверте</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>9. Скидання форми</legend>
+        <input type="reset" value="Очистити форму" />
+    </fieldset>
+
+    <fieldset>
+        <legend>10. Кнопка зі скриптом</legend>
+        <input type="button" value="Click me!" onClick='alert("Oh, you have been clicked me!!!")' />
+    </fieldset>
+
+    <fieldset>
+        <legend>11. Групування елементів</legend>
+        <label>Логін: <input type="text" name="login" /></label><br/>
+        <label>Пароль: <input type="password" name="pw" /></label>
+    </fieldset>
+
+</body>
+</html>
