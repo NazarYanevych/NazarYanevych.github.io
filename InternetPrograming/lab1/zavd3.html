@@ -36,8 +36,10 @@
     <form>
         <input type="button" value="Обчислити F" onClick="calculate()">
     </form>
- <h2>Завдання 3</h2>
- <script>
+
+
+<h2>Завдання 3</h2>
+<script>
 function fun(message) {
     document.getElementById('t_res').value = message;
 }
@@ -46,10 +48,17 @@ function fun1(message) {
     document.getElementById('t_res2').value = message;
 }
 </script>
+
 <form>
-<input type="button" size = "100" value="onClick" onClick="fun('Відбувся клік на текстовому елементі форми');"><br>
-<input type="button" size = "100" value="onFocus" onfocus="fun1" onFocus="fun1('Фокус на текстовому елементі форми');"><br>
+    <input type="text" size="100" value="onClick" 
+           onClick="fun('Відбувся клік на текстовому елементі форми');"><br><br>
+    <input type="text" size="100" value="onFocus" 
+           onFocus="fun1('Фокус на текстовому елементі форми');"><br><br>
+
+    <input type="text" size="100" id="t_res" placeholder="Повідомлення від onClick"><br><br>
+    <input type="text" size="100" id="t_res2" placeholder="Повідомлення від onFocus"><br>
 </form>
+
 
 </body>
 </html>
