@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 2</title>
+</head>
+<body>
+  <h3>Завдання 2.</h3>
+  <h2>Завдання 1</h2>
+  <p>Це звичайний HTML абзац.</p>
+
+  <script language="JavaScript">
+    document.write("Привіт! Мене звати Яневич Назарій Васильович, студент групи ІПЗ-24.");
+  </script>
+
+  <p>Знову звичайний HTML абзац.</p>
+
+  <form>
+    <input type="button" value="Натисни мене"
+      onClick="alert('Я народився 26.05.2007 року в місті Івано-Франківськ')">
+  </form>
+
+
+   <h2>Завдання 2 - Обчислення виразу F = x⁶ + x⁵y + 0.5z + x²</h2>
+
+    
+    <script>
+        function calculate() {
+            let x = 22;
+            let y = 11;
+            let z = 5;
+            let F = Math.pow(x, 6) + Math.pow(x, 5) * y + 0.5 * z + Math.pow(x, 2);
+            alert("Результат обчислення F: " + F);
+        }
+    </script>
+    <form>
+        <input type="button" value="Обчислити F" onClick="calculate()">
+    </form>
+ <h2>Завдання 3</h2>
+ <script>
+function fun(message) {
+    document.getElementById('t_res').value = message;
+}
+
+function fun1(message) {
+    document.getElementById('t_res2').value = message;
+}
+</script>
+<form>
+<input type="text" size = "100" value="onClick" onClick="fun('Відбувся клік на текстовому елементі форми');"><br>
+<input type="text" size = "100" value="onFocus" onfocus="fun1" onFocus="fun1('Фокус на текстовому елементі форми');"><br>
+</form>
+
+</body>
+</html>
