@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 2</title>
+</head>
+<body>
+  <h3>Завдання 2.</h3>
+  <h2>Завдання 1</h2>
+  <p>Це звичайний HTML абзац.</p>
+
+  <script language="JavaScript">
+    document.write("Привіт! Мене звати Яневич Назарій Васильович, студент групи ІПЗ-24.");
+  </script>
+
+  <p>Знову звичайний HTML абзац.</p>
+
+  <form>
+    <input type="button" value="Натисни мене"
+      onClick="alert('Я народився 26.05.2007 року в місті Івано-Франківськ')">
+  </form>
+
+
+   <h2>Завдання 2 - Обчислення виразу F = x⁶ + x⁵y + 0.5z + x²</h2>
+
+    
+    <script>
+        function calculate() {
+            let x = 22;
+            let y = 11;
+            let z = 5;
+            let F = Math.pow(x, 6) + Math.pow(x, 5) * y + 0.5 * z + Math.pow(x, 2);
+            alert("Результат обчислення F: " + F);
+        }
+    </script>
+    <form>
+        <input type="button" value="Обчислити F" onClick="calculate()">
+    </form>
+
+
+<h2>Завдання 3</h2>
+<script>
+function fun(message) {
+    document.getElementById('t_res').value = message;
+}
+
+function fun1(message) {
+    document.getElementById('t_res2').value = message;
+}
+</script>
+
+<form>
+    <input type="text" size="100" value="onClick" 
+           onClick="fun('Відбувся клік на текстовому елементі форми');"><br><br>
+    <input type="text" size="100" value="onFocus" 
+           onFocus="fun1('Фокус на текстовому елементі форми');"><br><br>
+
+    <input type="text" size="100" id="t_res" placeholder="Повідомлення від onClick"><br><br>
+    <input type="text" size="100" id="t_res2" placeholder="Повідомлення від onFocus"><br>
+</form>
+
+<h2>Завдання 4</h2>
+<script>
+function calculateF() {
+  let x, y, F;
+
+  x = parseFloat(document.getElementById("t_x").value);
+  y = parseFloat(document.getElementById("t_y").value);
+
+
+  if (isNaN(x) || isNaN(y)) {
+    alert("Будь ласка, введіть коректні числові значення для x та y.");
+    return;
+  }
+
+
+  if (x / y > 0) {
+
+    F = x * y - 1;
+  } else if (x !== 0 && y !== 3) {
+
+    F = x * y;
+  } else {
+
+    F = x - y;
+  }
+
+  document.getElementById("t_f").value = F;
+}
+</script>
+<p>Введіть значення для змінних x та y.</p>
+
+<form id="main_form">
+  <label for="t_x">x:</label>
+  <input type="text" id="t_x" value="5">
+
+  <label for="t_y">y:</label>
+  <input type="text" id="t_y" value="2">
+
+  <label for="t_f">F (Результат):</label>
+  <input type="text" id="t_f" value="" readonly>
+
+  <input type="button" onClick="calculateF();" value="Розрахувати">
+</form>
+
+</body>
+</html>
