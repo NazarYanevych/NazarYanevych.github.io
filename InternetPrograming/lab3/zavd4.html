@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 4</title>
+</head>
+<body>
+
+<div class="gallery-container">
+    <img id="main-image" src="" alt="Зображення">
+    
+    <div class="controls">
+        <button id="prev-button" class="nav-button">« Назад</button>
+        <button id="next-button" class="nav-button">Вперед »</button>
+    </div>
+</div>
+
+<script>
+
+    const images = [
+        'lab3/file1.mp4',
+        'lab3/file2.mp4',
+        'lab3/file3.mp4',
+    ];
+
+    let currentIndex = 0;
+
+    const imageElement = document.getElementById('main-image');
+    const prevButton = document.getElementById('prev-button');
+    const nextButton = document.getElementById('next-button');
+
+
+    function showImage() {
+        imageElement.src = images[currentIndex];
+    }
+
+
+    function showNextImage() {
+        currentIndex++;
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+        showImage();
+    }
+
+    function showPrevImage() {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        }
+        showImage();
+    }
+
+    nextButton.addEventListener('click', showNextImage);
+    prevButton.addEventListener('click', showPrevImage);
+
+    showImage();
+
+</script>
+
+</body>
+</html>
