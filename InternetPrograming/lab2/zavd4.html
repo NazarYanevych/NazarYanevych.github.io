@@ -5,23 +5,23 @@
     <title>Дослідження console.log()</title>
 </head>
 <body>
-    <h1>Результати дивіться в консолі розробника (F12)</h1>
+    <h1>Результати в консолі(F12)</h1>
 
     <script>
-        console.log("--- 1. Вивід остачі від ділення ---");
+        console.log("1. Вивід остачі від ділення ---");
 
         let num1 = 17;
         let num2 = 5;
-        let remainder = num1 % num2;
+        let ostacha = num1 % num2;
 
-        console.log("Остача від ділення " + num1 + " на " + num2 + " дорівнює " + remainder);
-        console.log("Остача від ділення", num1, "на", num2, "дорівнює", remainder);
+        console.log("Остача від ділення " + num1 + " на " + num2 + " дорівнює " + ostacha);
+        console.log("Остача від ділення", num1, "на", num2, "дорівнює", ostacha);
         
         console.log("\n");
 
-        console.log("--- 2. Вивід логічного значення (true/false) ---");
+        console.log("2. Вивід логічного значення (true/false) ---");
         
-        let isDivisible = (remainder === 0);
+        let isDivisible = (ostacha === 0);
         console.log("Перевірка: остача від ділення " + num1 + " на " + num2 + " дорівнює 0?");
         console.log(isDivisible);
 
@@ -33,9 +33,9 @@
         
         console.log("\n");
 
-        console.log("--- 3. Комбінований вивід з масиву (%s, %d) ---");
+        console.log("3. Комбінований вивід з масиву (%s, %d) ---");
 
-        let an_array = ["Собака", 10, "Кіт", 5.8];
+        let an_array = ["Яневич", 10, "Назарій", 5.8];
 
         console.log("Вивід елементів: %s, %d, %s, %d", an_array[0], an_array[1], an_array[2], an_array[3]);
         
