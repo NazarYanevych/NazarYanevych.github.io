@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Дослідження console.log()</title>
+</head>
+<body>
+    <h1>Результати дивіться в консолі розробника (F12)</h1>
+
+    <script>
+        console.log("--- 1. Вивід остачі від ділення ---");
+
+        let num1 = 17;
+        let num2 = 5;
+        let remainder = num1 % num2;
+
+        console.log("Остача від ділення " + num1 + " на " + num2 + " дорівнює " + remainder);
+        console.log("Остача від ділення", num1, "на", num2, "дорівнює", remainder);
+        
+        console.log("\n");
+
+        console.log("--- 2. Вивід логічного значення (true/false) ---");
+        
+        let isDivisible = (remainder === 0);
+        console.log("Перевірка: остача від ділення " + num1 + " на " + num2 + " дорівнює 0?");
+        console.log(isDivisible);
+
+        let num3 = 20;
+        let num4 = 5;
+        let isDivisibleTrue = (num3 % num4 === 0);
+        console.log("Перевірка: остача від ділення " + num3 + " на " + num4 + " дорівнює 0?");
+        console.log(isDivisibleTrue);
+        
+        console.log("\n");
+
+        console.log("--- 3. Комбінований вивід з масиву (%s, %d) ---");
+
+        let an_array = ["Собака", 10, "Кіт", 5.8];
+
+        console.log("Вивід елементів: %s, %d, %s, %d", an_array[0], an_array[1], an_array[2], an_array[3]);
+        
+        console.log("Перший елемент як рядок: %s", an_array[0]);
+        console.log("Другий елемент як число: %d", an_array[1]);
+        
+        console.log("Спроба вивести '%s' як число (%d):", an_array[2], an_array[2]);
+        console.log("Спроба вивести число %d як рядок (%s):", an_array[1], an_array[1]);
+
+    </script>
+</body>
+</html>

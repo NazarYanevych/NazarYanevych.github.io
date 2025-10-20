@@ -34,7 +34,6 @@ function fun_build() {
         return;
     }
 
-    // Цикл проходить по всіх стовпцях (j) лише для другого рядка (i=2)
     for (let j = 1; j <= stb; j++) {
         let res_str = "sum += parseFloat(main_form._" + target_row + "_" + j + ".value);";
         eval(res_str);
