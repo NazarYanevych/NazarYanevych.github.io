@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ієрархічне дерево</title>
+</head>
+<body>
+
+    <h2>Ієрархія продуктів</h2>
+
+    <ul id="myTree">
+        <li>
+            <span class="caret">fruits</span>
+            <ul class="nested">
+                <li>apple</li>
+                <li>pineapple</li>
+                <li>apricot</li>
+                <li>pear</li>
+                <li>lemon</li>
+            </ul>
+        </li>
+        <li>
+            <span class="caret">vegetables</span>
+            <ul class="nested">
+                <li>potatoes</li>
+                <li>beetroot</li>
+                <li>carrots</li>
+                <li>pear</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        const toggler = document.getElementsByClassName("caret");
+
+        for (let i = 0; i < toggler.length; i++) {
+            toggler[i].addEventListener("click", function() {
+                const nestedList = this.parentElement.querySelector(".nested");
+                nestedList.classList.toggle("active");
+                this.classList.toggle("caret-down");
+            });
+        }
+    </script>
+
+</body>
+</html>
