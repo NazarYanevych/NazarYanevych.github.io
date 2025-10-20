@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 5</title>
+</head>
+<body>
+
+<div class="quiz-container">
+    <div id="score-text"></div>
+    <div id="question-container">
+        <span id="question-text"></span>
+        <input type="number" id="answer-input">
+    </div>
+    <div id="result-text"></div>
+    <div class="buttons">
+        <button id="check-button" class="btn">Перевірити</button>
+        <button id="next-button" class="btn">Наступне завдання</button>
+    </div>
+</div>
+
+<script>
+    const questionText = document.getElementById('question-text');
+    const answerInput = document.getElementById('answer-input');
+    const checkButton = document.getElementById('check-button');
+    const nextButton = document.getElementById('next-button');
+    const resultText = document.getElementById('result-text');
+    const scoreText = document.getElementById('score-text');
+
+    const TOTAL_QUESTIONS = 5;
+    const operators = ['+', '-', '*', '/'];
+    let correctAnswer;
+    let correctAnswersCount = 0;
+    let questionsAsked = 0;
+
+    function generateQuestion() {
+        questionsAsked++;
+        resultText.textContent = '';
+        answerInput.value = '';
+        answerInput.focus();
+
+        const operator = operators[Math.floor(Math.random() * operators.length)];
+        let num1 = Math.floor(Math.random() * 10);
+        let num2 = Math.floor(Math.random() * 10);
+
+        if (operator === '/') {
+            num2 = Math.floor(Math.random() * 9) + 1;
+            correctAnswer = Math.floor(Math.random() * 10);
+            num1 = num2 * correctAnswer;
+        } else if (operator === '-') {
+            if (num1 < num2) {
+                [num1, num2] = [num2, num1];
+            }
+            correctAnswer = num1 - num2;
+        } else if (operator === '+') {
+            correctAnswer = num1 + num2;
+        } else if (operator === '*') {
+            correctAnswer = num1 * num2;
+        }
+        
+        questionText.textContent = `${num1} ${operator} ${num2} =`;
+        updateScore();
+        
+        checkButton.disabled = false;
+        nextButton.disabled = true;
+    }
+
+    function checkAnswer() {
+        const userAnswer = parseInt(answerInput.value, 10);
+        
+        if (isNaN(userAnswer)) {
+            resultText.textContent = "Будь ласка, введіть число.";
+            resultText.className = 'error';
+            return;
+        }
+        
+        if (userAnswer === correctAnswer) {
+            resultText.textContent = "Правильно!";
+            resultText.className = 'correct';
+            correctAnswersCount++;
+        } else {
+            resultText.textContent = `Помилка, правильна відповідь «${correctAnswer}»`;
+            resultText.className = 'error';
+        }
+
+        updateScore();
+        checkButton.disabled = true;
+
+        if (questionsAsked < TOTAL_QUESTIONS) {
+            nextButton.disabled = false;
+        } else {
+            scoreText.textContent = `Кінець! ${scoreText.textContent}`;
+            nextButton.disabled = true;
+        }
+    }
+    
+    function updateScore() {
+        const percentage = questionsAsked > 0 ? Math.round((correctAnswersCount / questionsAsked) * 100) : 0;
+        scoreText.textContent = `Загальний рахунок ${percentage}% (${correctAnswersCount} правильних з ${questionsAsked}, всього ${TOTAL_QUESTIONS})`;
+    }
+
+    checkButton.addEventListener('click', checkAnswer);
+    nextButton.addEventListener('click', generateQuestion);
+
+    answerInput.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            checkButton.click();
+        }
+    });
+
+    generateQuestion();
+</script>
+</body>
+</html>
