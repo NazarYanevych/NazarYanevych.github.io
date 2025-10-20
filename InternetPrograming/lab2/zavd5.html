@@ -11,9 +11,9 @@
     </div>
 
     <script>
-        console.info("Це інформаційне повідомлення. Зазвичай з іконкою 'i'.");
-        console.warn("Це попередження. Вказує на потенційну проблему.");
-        console.error("Це повідомлення про помилку. Вказує на збій у виконанні.");
+        console.info("Це інформаційне повідомлення.");
+        console.warn("Це попередження.");
+        console.error("Це повідомлення про помилку.");
 
         const myObject = {
             id: 101,
@@ -39,15 +39,19 @@
         }
         console.timeEnd("Timer1");
 
-        console.warn("Спроба запустити застарілий метод console.profile().");
-        try {
-             console.profile("MyProfile");
-             for (let i = 0; i < 500000; i++) { Math.sqrt(i); }
-             console.profileEnd("MyProfile");
-        } catch (e) {
-            console.error("Помилка: console.profile() не підтримується або застарів.", e.message);
+        function startProfile() {
+            console.log("Починаю спробу запуску 'старого' профайлера...");
+            console.profile("MyOldProfile");
+            for (let i = 0; i < 500000; i++) {
+                Math.sqrt(i);
+            }
+            
+            console.profileEnd("MyOldProfile");
+            
+            console.log("Завершення. Якщо ви бачите це повідомлення, ви в минулому.");
         }
-       
+        startProfile();
+        
         const x = 5;
         const y = 10;
         console.assert(x > y, "Помилка твердження: x не більше y!", {x_val: x, y_val: y});
