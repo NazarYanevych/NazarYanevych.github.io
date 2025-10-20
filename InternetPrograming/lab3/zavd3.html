@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 2</title>
+</head>
+<body>
+    <div class="container">
+        <textarea id="display" placeholder="Текст з'явиться тут..."></textarea>
+        
+        <div id="keyboard"></div>
+        
+        <button id="switch-layout-button">Alt+Shift</button>
+        <button id="clear-button">Очистити поле</button>
+    </div>
+
+    <script>
+        const numbersRow = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+
+        const ukLettersRow1 = ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ї'];
+        const ukLettersRow2 = ['ф', 'і', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'є'];
+        const ukLettersRow3 = ['я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю'];
+        const ukKeyboardLayout = [numbersRow, ukLettersRow1, ukLettersRow2, ukLettersRow3];
+
+        const enLettersRow1 = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
+        const enLettersRow2 = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
+        const enLettersRow3 = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
+        const enKeyboardLayout = [numbersRow, enLettersRow1, enLettersRow2, enLettersRow3];
+        
+        let currentLayout = 'uk';
+
+        const keyboardContainer = document.getElementById('keyboard');
+        const display = document.getElementById('display');
+        const clearButton = document.getElementById('clear-button');
+        const switchLayoutButton = document.getElementById('switch-layout-button');
+
+        function renderKeyboard() {
+            keyboardContainer.innerHTML = '';
+            
+            const layout = (currentLayout === 'uk') ? ukKeyboardLayout : enKeyboardLayout;
+            
+            layout.forEach(rowArray => {
+                const rowDiv = document.createElement('div');
+                rowDiv.classList.add('keyboard-row');
+                
+                rowArray.forEach(keyChar => {
+                    const keyButton = document.createElement('button');
+                    keyButton.classList.add('key');
+                    keyButton.textContent = keyChar;
+                    keyButton.dataset.char = keyChar;
+                    rowDiv.appendChild(keyButton);
+                });
+                
+                keyboardContainer.appendChild(rowDiv);
+            });
+        }
+
+        keyboardContainer.addEventListener('click', function(event) {
+            if (event.target.classList.contains('key')) {
+                const char = event.target.dataset.char;
+                display.value += char;
+            }
+        });
+
+        clearButton.addEventListener('click', function() {
+            display.value = ''; 
+        });
+
+        switchLayoutButton.addEventListener('click', function() {
+            currentLayout = (currentLayout === 'uk') ? 'en' : 'uk';
+            renderKeyboard();
+        });
+
+        renderKeyboard();
+    </script>
+</body>
+</html>
