@@ -40,22 +40,22 @@
         console.timeEnd("Timer1");
 
         function startProfile() {
-            console.log("Починаю спробу запуску 'старого' профайлера...");
-            console.profile("MyOldProfile");
+            console.log("Профілювання");
+            console.profile("MyProfile");
             for (let i = 0; i < 500000; i++) {
                 Math.sqrt(i);
             }
             
-            console.profileEnd("MyOldProfile");
+            console.profileEnd("MyProfile");
             
-            console.log("Завершення. Якщо ви бачите це повідомлення, ви в минулому.");
+            console.log("Завершення.");
         }
         startProfile();
-        
+
         const x = 5;
         const y = 10;
         console.assert(x > y, "Помилка твердження: x не більше y!", {x_val: x, y_val: y});
-        console.assert(y > x, "Це повідомлення не з'явиться, бо твердження істинне.");
+        console.assert(y > x, "Твердження вірне: y більше x.");
     </script>
 </body>
 </html>
