@@ -1,0 +1,68 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+let str, stb;
+
+function fun() {
+    str = parseInt(main_form.t_str.value);
+    stb = parseInt(main_form.t_stb.value);
+    let res_str = "<table>\n";
+
+    for (let i = 1; i <= str; i++) {
+        res_str += "<tr>\n";
+        for (let j = 1; j <= stb; j++) {
+            let value = (-7 * j) / (3 * i);
+
+            res_str += "<td>";
+
+            res_str += "<input type = \"text\" id = \"_" + i + "_" + j + "\" value = \"" + value.toFixed(4) + "\">";
+            res_str += "<\/td>\n";
+        }
+        res_str += "<\/tr>\n";
+    }
+    res_str += "<\/table>";
+    main_div.innerHTML = res_str;
+}
+
+function fun_build() {
+    let sum = 0;
+    const target_row = 2; 
+
+    if (str < target_row) {
+        alert("Помилка: У матриці менше двох рядків, щоб розрахувати суму 2-го.");
+        return;
+    }
+
+    // Цикл проходить по всіх стовпцях (j) лише для другого рядка (i=2)
+    for (let j = 1; j <= stb; j++) {
+        let res_str = "sum += parseFloat(main_form._" + target_row + "_" + j + ".value);";
+        eval(res_str);
+    }
+    
+    alert("Сума елементів 2-го рядка = " + sum.toFixed(4));
+}
+</script>
+</head>
+<body>
+    <form id="main_form">
+        <table>
+            <tr>
+                <td>Кількість строк</td>
+                <td><input type="text" id="t_str" value="5"></td>
+            </tr>
+            <tr>
+                <td>Кількість стовпців</td>
+                <td><input type="text" id="t_stb" value="5"></td>
+            </tr>
+            <tr>
+                <td><input type="button" onClick="fun();" value="Побудувати матрицю"></td>
+            </tr>
+            <tr>
+                <td><input type="button" onClick="fun_build();" value="Розрахувати"></td>
+            </tr>
+        </table>
+        <div id="main_div"></div>
+    </form>
+</body>
+</html>

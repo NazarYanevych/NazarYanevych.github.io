@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Завдання 1</title>
+</head>
+<body onLoad="updateClock()">
+
+  <form name="clockForm">
+    Дата і час:<br>
+    <input type="text" name="datetime" size="20" value="">
+  </form>
+
+<script>
+  function updateClock() {
+    const now = new Date();
+
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const day = now.getDate();
+    const hour = now.getHours();
+    const min = now.getMinutes();
+    const sec = now.getSeconds();
+
+    function addLeadingZero(num) {
+      return (num < 10) ? "0" + num : num;
+    }
+
+    const dateTimeString = year + ":" +
+                           addLeadingZero(month) + ":" +
+                           addLeadingZero(day) + ":" +
+                           addLeadingZero(hour) + ":" +
+                           addLeadingZero(min) + ":" +
+                           addLeadingZero(sec);
+
+    document.clockForm.datetime.value = dateTimeString;
+
+    setTimeout(updateClock, 1000);
+  }
+</script>
+
+</body>
+</html>
