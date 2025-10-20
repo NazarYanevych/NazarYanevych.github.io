@@ -104,65 +104,54 @@ function calculateF() {
 </form>
 
 
-<h2>Завдання 5</h2>
-<script>
-function factorial(n) {
-  if (n < 0) {
-    return NaN; // Факторіал для від'ємних чисел не визначений
-  }
-  if (n === 0 || n === 1) {
-    return 1;
-  }
-  let result = 1;
-  for (let i = 2; i <= n; i++) {
-    result *= i;
-  }
-  return result;
-}
-</script>
-<script>
-function calculateSum() {
-  const x = parseFloat(document.getElementById("t_x").value);
-  const y = parseFloat(document.getElementById("t_y").value);
-
-  if (isNaN(x) || isNaN(y)) {
-    alert("Будь ласка, введіть коректні числові значення для x та y.");
-    return;
-  }
-  if (x === 0) {
-    alert("Значення 'x' не може дорівнювати нулю, оскільки відбувається ділення на x.");
-    return;
-  }
-
-  let totalSum = 0;
-  const numeratorPart = (3 * y / x) + Math.pow(y, 2);
-
-  for (let i = 1; i <= 5; i++) {
-    const sign = Math.pow(-1, i);
-    const denominator = factorial(i + 1);
-    const term = sign * (numeratorPart / denominator);
-    totalSum += term;
-  }
-
-  document.getElementById("t_sum").value = totalSum;
-}
-</script>
-
-<form>
+<h2>Завдання 5: Обчислення суми ряду</h2>
     <p>Введіть значення для змінних x та y, щоб отримати результат.</p>
+    <form>
+      <label for="t_x_task5">x:</label>
+      <input type="text" id="t_x_task5" value="2">
+      <label for="t_y_task5">y:</label>
+      <input type="text" id="t_y_task5" value="3">
+      <label for="t_sum_task5">S (Сума):</label>
+      <input type="text" id="t_sum_task5" value="" readonly>
+      <input type="button" onClick="calculateSeriesSum()" value="Розрахувати">
+    </form>
+    <script>
+      function factorial(n) {
+        if (n < 0) return NaN;
+        if (n === 0 || n === 1) return 1;
+        let result = 1;
+        for (let i = 2; i <= n; i++) {
+          result *= i;
+        }
+        return result;
+      }
 
-<form id="main_form">
-  <label for="t_x">x:</label>
-  <input type="text" id="t_x" value="2">
+      function calculateSeriesSum() {
+        const x = parseFloat(document.getElementById("t_x_task5").value);
+        const y = parseFloat(document.getElementById("t_y_task5").value);
 
-  <label for="t_y">y:</label>
-  <input type="text" id="t_y" value="3">
+        if (isNaN(x) || isNaN(y)) {
+          alert("Будь ласка, введіть коректні числові значення.");
+          return;
+        }
+        if (x === 0) {
+          alert("Значення 'x' не може дорівнювати нулю.");
+          return;
+        }
 
-  <label for="t_sum">S (Сума):</label>
-  <input type="text" id="t_sum" value="" readonly>
+        let totalSum = 0;
+        const numeratorPart = (3 * y / x) + Math.pow(y, 2);
 
-  <input type="button" onClick="calculateSum();" value="Розрахувати">
-</form>
+        for (let i = 1; i <= 5; i++) {
+          const sign = Math.pow(-1, i);
+          const denominator = factorial(i + 1);
+          const term = sign * (numeratorPart / denominator);
+          totalSum += term;
+        }
+
+        document.getElementById("t_sum_task5").value = totalSum;
+      }
+    </script>
 
 </body>
 </html>
