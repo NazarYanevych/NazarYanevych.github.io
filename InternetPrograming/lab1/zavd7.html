@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Завдання 7</title>
+
+<script>
+const products = ["Ноутбук", "Навушники", "Нетбук", "Накопичувач"];
+const quantities = [49, 159, 257, 305];
+const costs = [2500, 350056, 18067, 2210];
+
+let foundIndex = -1;
+
+window.onload = function() {
+  const selectElement = document.getElementById('product_select');
+  products.forEach((product, index) => {
+    const option = document.createElement('option');
+    option.value = index;
+    option.textContent = product;
+    selectElement.appendChild(option);
+  });
+};
+
+function fun1() {
+  const selectElement = document.getElementById('product_select');
+  foundIndex = parseInt(selectElement.value);
+  
+  document.getElementById('total_sum_result').innerHTML = '';
+
+  if (foundIndex >= 0) {
+    document.form1.output_quantity.value = quantities[foundIndex];
+    document.form1.output_cost.value = costs[foundIndex];
+  } else {
+    document.form1.output_quantity.value = "";
+    document.form1.output_cost.value = "";
+  }
+}
+
+function fun2() {
+  const resultElement = document.getElementById('total_sum_result');
+
+  if (foundIndex !== -1) {
+    const productName = products[foundIndex];
+    const quantity = quantities[foundIndex];
+    const cost = costs[foundIndex];
+    const total = quantity * cost;
+    resultElement.innerHTML = "Загальна сума для товару '" + productName + "' складає: " + total + " грн.";
+  } else {
+    resultElement.innerHTML = "Помилка: спочатку виберіть товар зі списку та натисніть першу кнопку.";
+  }
+}
+</script>
+</head>
+
+<body>
+
+<h3>Облік товарів на складі</h3>
+
+<form name="form1">
+  Виберіть товар:
+  <select id="product_select">
+      <option value="-1" selected disabled>-- Будь ласка, виберіть товар --</option>
+  </select>
+  
+  <input type="button" value="Наявна кількість і вартість" onClick="fun1()">
+  <br><br>
+
+  Наявна кількість:
+  <input type="text" name="output_quantity" size="30" readonly>
+  <br><br>
+
+  Вартість за одиницю:
+  <input type="text" name="output_cost" size="30" readonly>
+  <br><br>
+
+  <input type="button" value="Загальна сума" onClick="fun2()">
+</form>
+
+<div id="total_sum_result" style="margin-top: 15px; font-weight: bold;"></div>
+
+</body>
+</html>
+

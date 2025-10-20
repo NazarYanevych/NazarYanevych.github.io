@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Завдання 6</title>
+
+<script>
+const products = ["Ноутбук", "Навушники", "Нетбук", "Накопичувач"];
+const quantities = [49, 159, 257, 305];
+const costs = [2500, 350056, 18067, 2210];
+
+let foundIndex = -1;
+
+function fun1() {
+  const userInput = document.form1.product_name.value;
+  let productWasFound = false;
+  document.getElementById('total_sum_result').innerHTML = '';
+
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].toLowerCase() === userInput.toLowerCase()) {
+      foundIndex = i;
+      productWasFound = true;
+      document.form1.output_quantity.value = quantities[i];
+      document.form1.output_cost.value = costs[i];
+      break;
+    }
+  }
+
+  if (!productWasFound) {
+    foundIndex = -1;
+    document.form1.output_quantity.value = "Товар не знайдено";
+    document.form1.output_cost.value = "Товар не знайдено";
+  }
+}
+
+function fun2() {
+  const resultElement = document.getElementById('total_sum_result');
+
+  if (foundIndex !== -1) {
+    const productName = products[foundIndex];
+    const quantity = quantities[foundIndex];
+    const cost = costs[foundIndex];
+    const total = quantity * cost;
+    resultElement.innerHTML = "Загальна сума для товару '" + productName + "' складає: " + total + " грн.";
+  } else {
+    resultElement.innerHTML = "Помилка: спочатку знайдіть товар за допомогою першої кнопки.";
+  }
+}
+</script>
+</head>
+
+<body>
+
+<h3>Облік товарів на складі</h3>
+<p>Доступні товари: Ноутбук, Навушники, Нетбук, Накопичувач.</p>
+
+<form name="form1">
+  Введіть назву товару:
+  <input type="text" name="product_name">
+  <input type="button" value="Наявна кількість і вартість" onClick="fun1()">
+  <br><br>
+
+  Наявна кількість:
+  <input type="text" name="output_quantity" size="30" readonly>
+  <br><br>
+
+  Вартість за одиницю:
+  <input type="text" name="output_cost" size="30" readonly>
+  <br><br>
+
+  <input type="button" value="Загальна сума" onClick="fun2()">
+</form>
+
+<div id="total_sum_result" style="margin-top: 15px; font-weight: bold;"></div>
+
+</body>
+</html>
+
