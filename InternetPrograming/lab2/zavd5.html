@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Дослідження методів Console</title>
+</head>
+<body>
+    <h1>Результати дивіться в консолі розробника (F12)</h1>
+    <div id="testElement">
+        <p>Це <strong>тестовий</strong> елемент.</p>
+    </div>
+
+    <script>
+        console.info("Це інформаційне повідомлення. Зазвичай з іконкою 'i'.");
+        console.warn("Це попередження. Вказує на потенційну проблему.");
+        console.error("Це повідомлення про помилку. Вказує на збій у виконанні.");
+
+        const myObject = {
+            id: 101,
+            name: "Приклад об'єкта",
+            isAvailable: true,
+            details: {
+                tags: ["js", "console"],
+                owner: "Admin"
+            },
+            showId: function() { return this.id; }
+        };
+        console.log("Вивід об'єкта через console.log():", myObject);
+        console.dir(myObject);
+
+        const htmlElement = document.getElementById('testElement');
+        console.log("Вивід HTML-елемента через console.log():", htmlElement);
+        console.dirxml(htmlElement);
+
+        console.time("Timer1");
+        let sum = 0;
+        for (let i = 0; i < 1000000; i++) {
+            sum += i;
+        }
+        console.timeEnd("Timer1");
+
+        console.warn("Спроба запустити застарілий метод console.profile().");
+        try {
+             console.profile("MyProfile");
+             for (let i = 0; i < 500000; i++) { Math.sqrt(i); }
+             console.profileEnd("MyProfile");
+        } catch (e) {
+            console.error("Помилка: console.profile() не підтримується або застарів.", e.message);
+        }
+       
+        const x = 5;
+        const y = 10;
+        console.assert(x > y, "Помилка твердження: x не більше y!", {x_val: x, y_val: y});
+        console.assert(y > x, "Це повідомлення не з'явиться, бо твердження істинне.");
+    </script>
+</body>
+</html>
