@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сторінка тестування</title>
+</head>
+<body>
+
+    <h1>Онлайн тестування</h1>
+    <form id="quizForm">
+        <div class="question-block">
+            <h3>1. Який тег використовується для створення гіперпосилання в HTML?</h3>
+            <label><input type="radio" name="q1" value="1" data-text="&lt;a&gt;"> &lt;a&gt;</label>
+            <label><input type="radio" name="q1" value="0" data-text="&lt;link&gt;"> &lt;link&gt;</label>
+            <label><input type="radio" name="q1" value="0" data-text="&lt;href&gt;"> &lt;href&gt;</label>
+            <label><input type="radio" name="q1" value="0" data-text="&lt;p&gt;"> &lt;p&gt;</label>
+        </div>
+
+        <div class="question-block">
+            <h3>2. Яка мова програмування виконується на стороні клієнта (в браузері)?</h3>
+            <label><input type="radio" name="q2" value="0" data-text="PHP"> PHP</label>
+            <label><input type="radio" name="q2" value="0" data-text="Python"> Python</label>
+            <label><input type="radio" name="q2" value="1" data-text="JavaScript"> JavaScript</label>
+            <label><input type="radio" name="q2" value="0" data-text="C#"> C#</label>
+        </div>
+
+        <div class="question-block">
+            <h3>3. Оберіть два НЕблочних (inline) елементи:</h3>
+            <label><input type="checkbox" name="q3" value="1" data-text="&lt;span&gt;"> &lt;span&gt;</label>
+            <label><input type="checkbox" name="q3" value="0" data-text="&lt;div&gt;"> &lt;div&gt;</label>
+            <label><input type="checkbox" name="q3" value="1" data-text="&lt;a&gt;"> &lt;a&gt;</label>
+            <label><input type="checkbox" name="q3" value="0" data-text="&lt;p&gt;"> &lt;p&gt;</label>
+        </div>
+        
+        <div class="question-block">
+            <h3>4. Які два атрибути є обов'язковими для тегу &lt;img&gt;?</h3>
+            <label><input type="checkbox" name="q4" value="0" data-text="class"> class</label>
+            <label><input type="checkbox" name="q4" value="1" data-text="src"> src</label>
+            <label><input type="checkbox" name="q4" value="0" data-text="title"> title</label>
+            <label><input type="checkbox" name="q4" value="1" data-text="alt"> alt</label>
+        </div>
+
+        <div class="question-block">
+            <h3>5. Який CSS селектор використовується для вибору елемента за його ID?</h3>
+            <select id="q5">
+                <option value="0" selected disabled>Оберіть відповідь</option>
+                <option value="0" data-text=". (крапка)">. (крапка)</option>
+                <option value="1" data-text="# (решітка)"># (решітка)</option>
+                <option value="0" data-text="* (зірочка)">* (зірочка)</option>
+                <option value="0" data-text="^ (дашок)">^ (дашок)</option>
+            </select>
+        </div>
+        
+        <div class="question-block">
+            <h3>6. Оберіть дві властивості CSS, що стосуються роботи з текстом:</h3>
+            <select id="q6" multiple size="4">
+                <option value="1" data-text="font-size">font-size</option>
+                <option value="0" data-text="border-radius">border-radius</option>
+                <option value="1" data-text="color">color</option>
+                <option value="0" data-text="margin">margin</option>
+            </select>
+        </div>
+
+        <div class="question-block">
+            <h3>7. Напишіть назву технології для стилізації HTML-документів (абревіатура).</h3>
+            <input type="text" id="q7" placeholder="Ваша відповідь">
+        </div>
+
+    </form>
+    
+    <button type="button" id="submitBtn">Завершити тестування</button>
+    
+    <div id="results-container"></div>
+
+<script>
+document.getElementById('submitBtn').addEventListener('click', function() {
+    let totalScore = 0;
+    const resultsData = [];
+    const form = document.getElementById('quizForm');
+
+    for (let i = 1; i <= 2; i++) {
+        const questionText = form.querySelector(`input[name="q${i}"]`).closest('.question-block').querySelector('h3').innerText;
+        const selectedRadio = form.querySelector(`input[name="q${i}"]:checked`);
+        let score = 0;
+        let userAnswer = "Не обрано";
+        if (selectedRadio) {
+            score = parseInt(selectedRadio.value);
+            userAnswer = selectedRadio.dataset.text;
+        }
+        resultsData.push({ question: questionText, answer: userAnswer, score: score });
+        totalScore += score;
+    }
+    
+    for (let i = 3; i <= 4; i++) {
+        const questionText = form.querySelector(`input[name="q${i}"]`).closest('.question-block').querySelector('h3').innerText;
+        const selectedCheckboxes = form.querySelectorAll(`input[name="q${i}"]:checked`);
+        let score = 0;
+        const userAnswers = [];
+        
+        selectedCheckboxes.forEach(cb => userAnswers.push(cb.dataset.text));
+        
+        if (selectedCheckboxes.length === 1) {
+            score = parseInt(selectedCheckboxes[0].value);
+        } else if (selectedCheckboxes.length === 2) {
+            let correctCount = 0;
+            selectedCheckboxes.forEach(cb => {
+                if (cb.value === '1') correctCount++;
+            });
+            if (correctCount === 2) score = 2;
+            if (correctCount === 1) score = 1;
+        }
+        
+        resultsData.push({ question: questionText, answer: userAnswers.join(', ') || "Не обрано", score: score });
+        totalScore += score;
+    }
+
+    const q5 = document.getElementById('q5');
+    const q5QuestionText = q5.closest('.question-block').querySelector('h3').innerText;
+    let q5Score = 0;
+    let q5UserAnswer = "Не обрано";
+    if (q5.selectedIndex > 0) {
+        q5Score = parseInt(q5.value);
+        q5UserAnswer = q5.options[q5.selectedIndex].dataset.text;
+    }
+    resultsData.push({ question: q5QuestionText, answer: q5UserAnswer, score: q5Score });
+    totalScore += q5Score;
+
+    const q6 = document.getElementById('q6');
+    const q6QuestionText = q6.closest('.question-block').querySelector('h3').innerText;
+    let q6Score = 0;
+    const q6UserAnswers = [];
+    const q6SelectedOptions = Array.from(q6.options).filter(option => option.selected);
+
+    q6SelectedOptions.forEach(opt => q6UserAnswers.push(opt.dataset.text));
+
+    if (q6SelectedOptions.length === 1) {
+        q6Score = parseInt(q6SelectedOptions[0].value);
+    } else if (q6SelectedOptions.length === 2) {
+        let correctCount = 0;
+        q6SelectedOptions.forEach(opt => {
+            if (opt.value === '1') correctCount++;
+        });
+        if (correctCount === 2) q6Score = 2;
+        if (correctCount === 1) q6Score = 1;
+    }
+    resultsData.push({ question: q6QuestionText, answer: q6UserAnswers.join(', ') || "Не обрано", score: q6Score });
+    totalScore += q6Score;
+
+    const q7 = document.getElementById('q7');
+    const q7QuestionText = q7.closest('.question-block').querySelector('h3').innerText;
+    const q7UserAnswer = q7.value.trim();
+    let q7Score = 0;
+    if (q7UserAnswer.toLowerCase() === 'css') {
+        q7Score = 1;
+    }
+    resultsData.push({ question: q7QuestionText, answer: q7UserAnswer || "Не введено", score: q7Score });
+    totalScore += q7Score;
+    
+    displayResults(resultsData, totalScore);
+});
+
+function displayResults(data, finalScore) {
+    const container = document.getElementById('results-container');
+    let tableHTML = `
+        <h2>Результати тестування</h2>
+        <table border="1" style="width:100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>Запитання</th>
+                    <th>Ваша відповідь</th>
+                    <th>Бал</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+    data.forEach(result => {
+        tableHTML += `
+            <tr>
+                <td>${result.question}</td>
+                <td>${result.answer}</td>
+                <td>${result.score}</td>
+            </tr>
+        `;
+    });
+    tableHTML += `
+            </tbody>
+        </table>
+        <div id="total-score" style="text-align: right; font-weight: bold; font-size: 1.2em; margin-top: 1em;">Загальний бал: ${finalScore}</div>
+    `;
+    container.innerHTML = tableHTML;
+}
+</script>
+
+</body>
+</html>
