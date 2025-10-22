@@ -3,73 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сторінка тестування (виправлено)</title>
+    <title>Сторінка тестування</title>
 </head>
 <body>
 
     <h1>Онлайн тестування</h1>
     <form id="quizForm">
         <div class="question-block">
-            <h3>1. Який тег використовується для створення гіперпосилання в HTML?</h3>
-            <label><input type="radio" name="q1" value="1"> &lt;a&gt;</label>
-            <label><input type="radio" name="q1" value="0"> &lt;link&gt;</label>
-            <label><input type="radio" name="q1" value="0"> &lt;href&gt;</label>
-            <label><input type="radio" name="q1" value="0"> &lt;p&gt;</label>
+            <h3>1. Яка столиця Франції?</h3>
+            <label><input type="radio" name="q1" value="1"> Париж</label>
+            <label><input type="radio" name="q1" value="0"> Лондон</label>
+            <label><input type="radio" name="q1" value="0"> Берлін</label>
+            <label><input type="radio" name="q1" value="0"> Рим</label>
             <p><b>Отриманий бал: <span id="result1" style="color:blue;"></span></b></p>
         </div>
 
         <div class="question-block">
-            <h3>2. Яка мова програмування виконується на стороні клієнта (в браузері)?</h3>
-            <label><input type="radio" name="q2" value="0"> PHP</label>
-            <label><input type="radio" name="q2" value="0"> Python</label>
-            <label><input type="radio" name="q2" value="1"> JavaScript</label>
-            <label><input type="radio" name="q2" value="0"> C#</label>
+            <h3>2. Яка планета є найбільшою в Сонячній системі?</h3>
+            <label><input type="radio" name="q2" value="0"> Земля</label>
+            <label><input type="radio" name="q2" value="0"> Марс</label>
+            <label><input type="radio" name="q2" value="1"> Юпітер</label>
+            <label><input type="radio" name="q2" value="0"> Сатурн</label>
             <p><b>Отриманий бал: <span id="result2" style="color:blue;"></span></b></p>
         </div>
 
         <div class="question-block">
-            <h3>3. Оберіть два НЕблочних (inline) елементи:</h3>
-            <label><input type="checkbox" name="q3" value="1"> &lt;span&gt;</label>
-            <label><input type="checkbox" name="q3" value="0"> &lt;div&gt;</label>
-            <label><input type="checkbox" name="q3" value="1"> &lt;a&gt;</label>
-            <label><input type="checkbox" name="q3" value="0"> &lt;p&gt;</label>
+            <h3>3. Оберіть дві країни, що межують з Україною:</h3>
+            <label><input type="checkbox" name="q3" value="1"> Польща</label>
+            <label><input type="checkbox" name="q3" value="0"> Франція</label>
+            <label><input type="checkbox" name="q3" value="1"> Румунія</label>
+            <label><input type="checkbox" name="q3" value="0"> Італія</label>
             <p><b>Отриманий бал: <span id="result3" style="color:blue;"></span></b></p>
         </div>
         
         <div class="question-block">
-            <h3>4. Які два атрибути є обов'язковими для тегу &lt;img&gt;?</h3>
-            <label><input type="checkbox" name="q4" value="0"> class</label>
-            <label><input type="checkbox" name="q4" value="1"> src</label>
-            <label><input type="checkbox" name="q4" value="0"> title</label>
-            <label><input type="checkbox" name="q4" value="1"> alt</label>
+            <h3>4. Які дві тварини є ссавцями?</h3>
+            <label><input type="checkbox" name="q4" value="0"> Акула</label>
+            <label><input type="checkbox" name="q4" value="1"> Кит</label>
+            <label><input type="checkbox" name="q4" value="0"> Крокодил</label>
+            <label><input type="checkbox" name="q4" value="1"> Дельфін</label>
             <p><b>Отриманий бал: <span id="result4" style="color:blue;"></span></b></p>
         </div>
 
         <div class="question-block">
-            <h3>5. Який CSS селектор використовується для вибору елемента за його ID?</h3>
+            <h3>5. Хто написав картину «Мона Ліза»?</h3>
             <select id="q5">
                 <option value="0" selected disabled>Оберіть відповідь</option>
-                <option value="0">. (крапка)</option>
-                <option value="1"># (решітка)</option>
-                <option value="0">* (зірочка)</option>
-                <option value="0">^ (дашок)</option>
+                <option value="0">Вінсент ван Гог</option>
+                <option value="1">Леонардо да Вінчі</option>
+                <option value="0">Пабло Пікассо</option>
+                <option value="0">Сальвадор Далі</option>
             </select>
             <p><b>Отриманий бал: <span id="result5" style="color:blue;"></span></b></p>
         </div>
         
         <div class="question-block">
-            <h3>6. Оберіть дві властивості CSS, що стосуються роботи з текстом:</h3>
+            <h3>6. Оберіть два океани:</h3>
             <select id="q6" multiple size="4">
-                <option value="1">font-size</option>
-                <option value="0">border-radius</option>
-                <option value="1">color</option>
-                <option value="0">margin</option>
+                <option value="1">Атлантичний</option>
+                <option value="0">Середземне море</option>
+                <option value="1">Тихий</option>
+                <option value="0">Чорне море</option>
             </select>
             <p><b>Отриманий бал: <span id="result6" style="color:blue;"></span></b></p>
         </div>
 
         <div class="question-block">
-            <h3>7. Напишіть назву технології для стилізації HTML-документів (абревіатура).</h3>
+            <h3>7. Напишіть прізвище першого космонавта незалежної України.</h3>
             <input type="text" id="q7" placeholder="Ваша відповідь">
             <p><b>Отриманий бал: <span id="result7" style="color:blue;"></span></b></p>
         </div>
@@ -150,7 +150,7 @@ document.getElementById('submitBtn').addEventListener('click', function() {
 
     let score7 = 0;
     const q7 = document.getElementById('q7');
-    if (q7.value.trim().toLowerCase() === 'css') {
+    if (q7.value.trim().toLowerCase() === 'каденюк') {
         score7 = 1;
     }
     document.getElementById('result7').innerText = score7;
