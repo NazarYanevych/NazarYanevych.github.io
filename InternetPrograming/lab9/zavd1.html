@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <title>Лабораторна 9 - Завдання 1</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1, h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+
+        #train {
+            position: relative;
+            cursor: pointer;
+        }
+
+        #elem {
+            width: 5%;
+            cursor: pointer;
+        }
+        
+        #field {
+            width: 400px;
+            height: 50px;
+            border: 1px solid black;
+            background-color: #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #ball {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Завдання 1: Всі приклади JavaScript-анімацій</h1>
+
+    <h2>Приклад 1: setInterval</h2>
+    <p>Натисніть на потяг, щоб запустити анімацію.</p>
+    <img id="train" src="https://js.cx/clipart/train.gif">
+    <hr>
+
+    <h2>Приклад 2: requestAnimationFrame (Прогрес)</h2>
+    <p>Натисніть на смугу прогресу, щоб запустити анімацію.</p>
+    <progress id="elem"></progress>
+    <hr>
+
+    <h2>Приклад 3: Анімація тексту (ефект друкування)</h2>
+    <p>Натисніть кнопку, щоб запустити анімацію.</p>
+    <textarea id="textExample" rows="5" cols="60">Цей текст з'явиться динамічно...</textarea>
+    <br>
+    <button onclick="runTyping()">Запустити</button>
+    <hr>
+    
+    <h2>Приклад 4: М'ячик з відскоком</h2>
+    <p>Натисніть на м'яч, щоб запустити анімацію.</p>
+    <div id="field">
+        <img src="https://en.js.cx/clipart/ball.svg" id="ball">
+    </div>
+
+    <script>
+        train.onclick = function() {
+            let start = Date.now(); 
+            let timer = setInterval(function() {
+                let timePassed = Date.now() - start;
+                train.style.left = timePassed / 5 + 'px';
+                if (timePassed > 2000) {
+                    clearInterval(timer);
+                }
+            }, 20);
+        }
+
+        function animate({ duration, draw, timing }) {
+            let start = performance.now();
+
+            requestAnimationFrame(function animate(time) {
+                let timePassed = time - start;
+                let timeFraction = timePassed / duration;
+                if (timeFraction > 1) timeFraction = 1;
+
+                let progress = timing(timeFraction);
+                draw(progress); 
+
+                if (timeFraction < 1) {
+                    requestAnimationFrame(animate);
+                }
+            });
+        }
+
+        elem.onclick = function() {
+            animate({
+                duration: 1000,
+                timing: function(timeFraction) {
+                    return timeFraction;
+                },
+                draw: function(progress) {
+                    elem.style.width = progress * 100 + '%';
+                }
+            });
+        };
+
+        function bounce(timeFraction) {
+            for (let a = 0, b = 1; 1; a += b, b /= 2) {
+                if (timeFraction >= (7 - 4 * a) / 11) {
+                    return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2);
+                }
+            }
+        }
+
+        function animateText(textArea) {
+            let text = textArea.value;
+            let to = text.length, from = 0;
+            
+            animate({
+                duration: 4000,
+                timing: bounce,
+                draw: function(progress) {
+                    let result = (to - from) * progress + from;
+                    textArea.value = text.slice(0, Math.ceil(result));
+                }
+            });
+        }
+        
+        function runTyping() {
+            animateText(document.getElementById('textExample'));
+        }
+        
+        ball.onclick = function() {
+            animate({
+                duration: 2000,
+                timing: bounce,
+                draw: function(progress) {
+                    ball.style.left = progress * (field.clientWidth - ball.clientWidth) + 'px';
+                }
+            });
+        };
+    </script>
+
+</body>
+</html>
