@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 8 - Завдання 5</title>
+</head>
+<body>
+
+    <h1>Завдання 5: Статичний метод</h1>
+    
+    <p>Результат MathHelper.add(5, 7): <b id="result">...</b></p>
+
+    <script>
+        class MathHelper {
+          static add(a, b) {
+            return a + b;
+          }
+        }
+
+        const sum = MathHelper.add(5, 7);
+
+        const resultElement = document.getElementById('result');
+        resultElement.textContent = sum;
+    </script>
+
+</body>
+</html>

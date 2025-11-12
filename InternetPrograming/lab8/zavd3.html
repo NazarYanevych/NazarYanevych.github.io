@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 8 - Завдання 3</title>
+</head>
+<body>
+
+    <h1>Завдання 3: Створення класу Car</h1>
+    
+    <p>Результат виконання коду:</p>
+    <div id="result" style="font-family: monospace; border: 1px solid #ccc; padding: 10px;"></div>
+
+    <script>
+        class Car {
+          constructor(brand, model, year) {
+            this.brand = brand;
+            this.model = model;
+            this.year = year;
+          }
+
+          info() {
+            return `Авто: ${this.brand} ${this.model}, ${this.year} року.`;
+          }
+        }
+
+        const car1 = new Car("Toyota", "Camry", 2020);
+        const carInfoString = car1.info();
+        const resultElement = document.getElementById('result');
+        resultElement.textContent = carInfoString;
+    </script>
+
+</body>
+</html>

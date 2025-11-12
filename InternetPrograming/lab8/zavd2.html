@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 8 - Завдання 2</title>
+</head>
+<body>
+
+    <h1>Завдання 2: Робота з об'єктом Date</h1>
+
+    <hr>
+    <h2>Завдання 2.1. Виведення поточної дати, дня тижня і часу</h2>
+    <button id="btn-2-1">Виконати</button>
+    <div id="result-2-1" style="margin-top: 10px;">
+        <p>Дата: <span id="res-2-1-date">...</span></p>
+        <p>День тижня: <span id="res-2-1-weekday">...</span></p>
+        <p>Час: <span id="res-2-1-time">...</span></p>
+    </div>
+
+    <hr>
+    <h2>Завдання 2.2. Останній день місяця</h2>
+    <div>
+        <label for="year-2-2">Рік:</label>
+        <input type="number" id="year-2-2" value="2025">
+        <label for="month-2-2">Місяць (1-12):</label>
+        <input type="number" id="month-2-2" value="2">
+        <button id="btn-2-2">Визначити</button>
+    </div>
+    <p>Останній день місяця: <span id="result-2-2">...</span></p>
+
+    <hr>
+    <h2>Завдання 2.3. Секунди дня</h2>
+    <button id="btn-2-3">Порахувати</button>
+    <div id="result-2-3" style="margin-top: 10px;">
+        <p>Пройшло від початку дня: <span id="res-2-3-passed">...</span></p>
+        <p>Залишилось до початку наступного дня: <span id="res-2-3-remaining">...</span></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const btn21 = document.getElementById('btn-2-1');
+            btn21.addEventListener('click', function() {
+                const now = new Date();
+                
+                const months = [
+                    "січня", "лютого", "березня", "квітня", "травня", "червня",
+                    "липня", "серпня", "вересня", "жовтня", "листопада", "грудня"
+                ];
+                const weekdays = [
+                    "неділя", "понеділок", "вівторок", "середа", 
+                    "четвер", "п'ятниця", "субота"
+                ];
+
+                const dateStr = `${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()} року`;
+                const weekdayStr = weekdays[now.getDay()];
+                const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+
+                document.getElementById('res-2-1-date').textContent = dateStr;
+                document.getElementById('res-2-1-weekday').textContent = weekdayStr;
+                document.getElementById('res-2-1-time').textContent = timeStr;
+            });
+
+            function getLastDayOfMonth(year, month) {
+                const date = new Date(year, month, 0);
+                return date.getDate();
+            }
+
+            const btn22 = document.getElementById('btn-2-2');
+            btn22.addEventListener('click', function() {
+                const year = parseInt(document.getElementById('year-2-2').value, 10);
+                const month = parseInt(document.getElementById('month-2-2').value, 10);
+                
+                if (year && month >= 1 && month <= 12) {
+                    const lastDay = getLastDayOfMonth(year, month);
+                    document.getElementById('result-2-2').textContent = lastDay;
+                } else {
+                    document.getElementById('result-2-2').textContent = "Некоректні дані";
+                }
+            });
+
+            function getSecondsToday() {
+                const now = new Date();
+                const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+                
+                const passedMs = now - startOfDay;
+                const passedSeconds = Math.floor(passedMs / 1000);
+                
+                const totalSecondsInDay = 24 * 60 * 60;
+                const remainingSeconds = totalSecondsInDay - passedSeconds;
+
+                return {
+                    passed: passedSeconds,
+                    remaining: remainingSeconds
+                };
+            }
+
+            const btn23 = document.getElementById('btn-2-3');
+            btn23.addEventListener('click', function() {
+                const secondsInfo = getSecondsToday();
+                document.getElementById('res-2-3-passed').textContent = secondsInfo.passed + ' секунд';
+                document.getElementById('res-2-3-remaining').textContent = secondsInfo.remaining + ' секунд';
+            });
+        });
+    </script>
+
+</body>
+</html>

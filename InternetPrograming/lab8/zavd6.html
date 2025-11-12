@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 8 - Завдання 6 (Варіант 2)</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .container { max-width: 600px; margin: auto; padding: 10px; border: 1px solid #ccc; border-radius: 8px; }
+        .form-group { margin-bottom: 10px; }
+        .form-group label { display: block; font-weight: bold; }
+        .form-group input { width: 95%; padding: 5px; }
+        button { padding: 8px 12px; margin-right: 10px; cursor: pointer; }
+        #result { margin-top: 15px; padding: 10px; background-color: #f4f4f4; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <h1>Завдання 6, Варіант 2: Клас Student</h1>
+    
+    <div class="container">
+        <h2>Студент 1</h2>
+        <div class="form-group">
+            <label for="s1-name">Ім'я:</label>
+            <input type="text" id="s1-name" placeholder="Іван Петренко">
+        </div>
+        <div class="form-group">
+            <label for="s1-group">Група:</label>
+            <input type="text" id="s1-group" placeholder="КН-31">
+        </div>
+        <div class="form-group">
+            <label for="s1-grades">Оцінки (через кому):</label>
+            <input type="text" id="s1-grades" placeholder="5, 4, 5, 3">
+        </div>
+        
+        <h2>Студент 2</h2>
+        <div class="form-group">
+            <label for="s2-name">Ім'я:</label>
+            <input type="text" id="s2-name" placeholder="Марія Іваненко">
+        </div>
+        <div class="form-group">
+            <label for="s2-group">Група:</label>
+            <input type="text" id="s2-group" placeholder="ПМ-32">
+        </div>
+        <div class="form-group">
+            <label for="s2-grades">Оцінки (через кому):</label>
+            <input type="text" id="s2-grades" placeholder="3, 4, 4, 3">
+        </div>
+
+        <button id="showButton">Показати інформацію</button>
+        <button id="clearButton">Очистити поля</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        class Person {
+            constructor(name) {
+                this.name = name;
+            }
+            
+            getInfo() {
+                return `Ім'я: ${this.name}`;
+            }
+        }
+
+        class Student extends Person {
+            
+            static university = "ПНУ";
+
+            constructor(name, group, grades) {
+                super(name);
+                this.group = group;
+                this.grades = grades;
+            }
+
+            getAverageGrade() {
+                if (!this.grades || this.grades.length === 0) {
+                    return 0;
+                }
+                const sum = this.grades.reduce((acc, grade) => acc + grade, 0);
+                return (sum / this.grades.length).toFixed(2);
+            }
+            
+            getInfo() {
+                return `${super.getInfo()}, Група: ${this.group}, Сер. бал: ${this.getAverageGrade()}`;
+            }
+            
+            static compareByGrade(student1, student2) {
+                const avg1 = parseFloat(student1.getAverageGrade());
+                const avg2 = parseFloat(student2.getAverageGrade());
+
+                if (avg1 > avg2) {
+                    return `${student1.name} має вищий середній бал.`;
+                } else if (avg2 > avg1) {
+                    return `${student2.name} має вищий середній бал.`;
+                } else {
+                    return "Студенти мають однаковий середній бал.";
+                }
+            }
+        }
+        
+        const inputs = [
+            document.getElementById('s1-name'),
+            document.getElementById('s1-group'),
+            document.getElementById('s1-grades'),
+            document.getElementById('s2-name'),
+            document.getElementById('s2-group'),
+            document.getElementById('s2-grades')
+        ];
+        const showButton = document.getElementById('showButton');
+        const clearButton = document.getElementById('clearButton');
+        const resultElement = document.getElementById('result');
+
+        showButton.addEventListener('click', function() {
+            const name1 = inputs[0].value;
+            const group1 = inputs[1].value;
+            const grades1 = inputs[2].value.split(',').map(Number);
+            
+            const name2 = inputs[3].value;
+            const group2 = inputs[4].value;
+            const grades2 = inputs[5].value.split(',').map(Number);
+
+            const student1 = new Student(name1, group1, grades1);
+            const student2 = new Student(name2, group2, grades2);
+            
+            const info1 = student1.getInfo();
+            const info2 = student2.getInfo();
+            
+            const comparison = Student.compareByGrade(student1, student2);
+            
+            resultElement.innerHTML = `
+                <p><b>Студент 1:</b> ${info1}</p>
+                <p><b>Студент 2:</b> ${info2}</p>
+                <hr>
+                <p><b>Порівняння:</b> ${comparison}</p>
+                <p><i>(Статичне поле 'university': ${Student.university})</i></p>
+            `;
+        });
+
+        clearButton.addEventListener('click', function() {
+            inputs.forEach(input => input.value = '');
+            resultElement.innerHTML = '';
+        });
+
+    </script>
+
+</body>
+</html>

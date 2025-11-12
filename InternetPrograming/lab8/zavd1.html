@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 8 - Завдання 1</title>
+</head>
+<body>
+
+    <h1>Завдання 1: Робота з об'єктом часу</h1>
+    
+    <p>Час, збережений в об'єкті: <b id="timeDisplay">--:--:--</b></p>
+    
+    <hr>
+    
+    <div>
+        <label for="secondsInput">Додати секунди (Завдання 1.2):</label>
+        <input type="number" id="secondsInput" value="30">
+        <button id="addButton">Додати</button>
+    </div>
+
+    <script>
+        
+        const timeDisplay = document.getElementById('timeDisplay');
+        const secondsInput = document.getElementById('secondsInput');
+        const addButton = document.getElementById('addButton');
+
+        let timeObject = {
+            hours: 0,
+            minutes: 0,
+            seconds: 0
+        };
+
+        function formatTime(num) {
+            return String(num).padStart(2, '0');
+        }
+
+        function displayTime() {
+            const h = formatTime(timeObject.hours);
+            const m = formatTime(timeObject.minutes);
+            const s = formatTime(timeObject.seconds);
+            timeDisplay.textContent = `${h}:${m}:${s}`;
+        }
+
+        function addSecondsToTime(secondsToAdd) {
+            
+            const tempDate = new Date();
+            tempDate.setHours(timeObject.hours);
+            tempDate.setMinutes(timeObject.minutes);
+            tempDate.setSeconds(timeObject.seconds);
+
+            tempDate.setSeconds(tempDate.getSeconds() + secondsToAdd);
+
+            timeObject.hours = tempDate.getHours();
+            timeObject.minutes = tempDate.getMinutes();
+            timeObject.seconds = tempDate.getSeconds();
+        }
+
+        addButton.addEventListener('click', function() {
+            const seconds = parseInt(secondsInput.value, 10) || 0;
+            addSecondsToTime(seconds);
+            displayTime();
+        });
+
+        function initializeCurrentTime() {
+            const now = new Date();
+            timeObject.hours = now.getHours();
+            timeObject.minutes = now.getMinutes();
+            timeObject.seconds = now.getSeconds();
+            displayTime();
+        }
+
+        initializeCurrentTime();
+
+    </script>
+
+</body>
+</html>
