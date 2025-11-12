@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Всі Завдання (1-4)</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">Мій Сайт</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Головна</a></li>
+                <li><a href="#">Про нас</a></li>
+                <li><a href="#">Послуги</a></li>
+                <li><a href="#">Контакти</a></li>
+            </ul>
+        </nav>
+        <button id="burger-toggle" class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main class="content-wrapper">
+        <h1>Завдання 4</h1>
+           
+        <button id="theme-toggle">Змінити тему (Light/Dark)</button>
+        <button id="open-modal-btn">Показати повідомлення</button>
+        <hr>
+        
+        <div id="tabbed_box_1" class="tabbed_box">
+            <h4>Browse Site <small>Select a Tab</small></h4>
+            <div class="tabbed_area">
+
+                <ul class="tabs">
+                    <li><a href="javascript:tabSwitch('tab_1', 'content_1');" id="tab_1" class="active"> Topics </a></li>
+                    <li><a href="javascript:tabSwitch('tab_2', 'content_2');" id="tab_2">Archives</a></li>
+                    <li><a href="javascript:tabSwitch('tab_3', 'content_3');" id="tab_3">Pages</a></li>
+                </ul>
+
+                <div id="content_1" class="content">
+                    <ul>
+                    <li><a href="">HTML Techniques <small>4 Posts</small></a></li>
+                    <li><a href="">CSS Styling <small>32 Posts</small></a></li>
+                    <li><a href="">Flash Tutorials <small>2 Posts</small></a></li>
+                    <li><a href="">Web Miscellanea <small>19 Posts</small></a></li>
+                    <li><a href="">Site News <small>6 Posts</small></a></li>
+                    <li><a href="">Web Development <small>8 Posts</small></a></li>
+                    </ul>
+                </div>
+                <div id="content_2" class="content">
+                    <ul>
+                    <li><a href="">December 2008 <small>6 Posts</small></a></li>
+                    <li><a href="">November 2008 <small>4 Posts</small></a></li>
+                    <li><a href="">October 2008 <small>22 Posts</small></a></li>
+                    <li><a href="">September 2008 <small>12 Posts</small></a></li>
+                    <li><a href="">August 2008 <small>3 Posts</small></a></li>
+                    <li><a href="">July 2008 <small>1 Posts</small></a></li>
+                    </ul>
+                </div>
+                <div id="content_3" class="content">
+                    <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contribute</a></li>
+                    <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <div id="modal-backdrop" class="modal-backdrop">
+        <div class="modal-window">
+            <button id="close-modal-btn" class="modal-close">&times;</button>
+            <h3>Важливе повідомлення.</h3>
+            <p>ДУЖЕ Важливе повідомлення.</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
