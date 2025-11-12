@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 7 - Завдання 6</title>
+</head>
+<body>
+
+    <h1>Завдання 6</h1>
+    
+    <div>
+        <label for="stringInput">Введіть рядок для перевірки:</label><br>
+        <textarea id="stringInput" rows="4" cols="50" placeholder="Отримайте 100% безкоштовно..."></textarea>
+    </div>
+    <br>
+    
+    <button id="runFunctionButton">Перевірити</button>
+    
+    <hr>
+    
+    <p>Рядок містить спам: <span id="result">...</span></p>
+
+    <script>
+        function checkSpam(str) {
+            const spamWords = [
+                "100% безкоштовно", 
+                "збільшення продажів", 
+                "тільки сьогодні", 
+                "не видаляйте"
+            ];
+            
+            const lowerCaseStr = str.toLowerCase();
+
+            for (let i = 0; i < spamWords.length; i++) {
+                const lowerCaseSpamWord = spamWords[i].toLowerCase();
+                if (lowerCaseStr.includes(lowerCaseSpamWord)) {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+
+        const stringInput = document.getElementById('stringInput');
+        const runButton = document.getElementById('runFunctionButton');
+        const resultElement = document.getElementById('result');
+
+        runButton.addEventListener('click', function() {
+            const textFromInput = stringInput.value;
+            const isSpam = checkSpam(textFromInput);
+            resultElement.textContent = isSpam;
+        });
+    </script>
+
+</body>
+</html>

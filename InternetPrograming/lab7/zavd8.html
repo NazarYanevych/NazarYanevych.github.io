@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Лабораторна 7"</title>
+</head>
+<body>
+
+    <h1>Завдання 8</h1>
+    <p>Реалізуйте функцію, яка розбиває рядок на окремі слова, відсортовує їх за довжиною (від найкоротшого до найдовшого) і повертає відсортований рядок. Якщо слова мають однакову довжину, то вони сортуються по алфавіту. 
+Вхід: "apple banana cherry date"
+Вихід: "date apple cherry banana</p>
+    
+    <div>
+        <label for="stringInput">Введіть рядок:</label>
+        <input type="text" id="stringInput" placeholder="apple banana cherry date">
+    </div>
+    <br>
+    
+    <button id="runFunctionButton">Сортувати</button>
+    
+    <hr>
+    
+    <p>Результат: <span id="result">...</span></p>
+
+    <script>
+        function sortWordsByLength(str) {
+            const words = str.split(' ');
+
+            words.sort((a, b) => {
+                if (a.length !== b.length) {
+                    return a.length - b.length;
+                } else {
+                    return a.localeCompare(b);
+                }
+            });
+
+            return words.join(' ');
+        }
+
+        const stringInput = document.getElementById('stringInput');
+        const runButton = document.getElementById('runFunctionButton');
+        const resultElement = document.getElementById('result');
+
+        runButton.addEventListener('click', function() {
+            const textFromInput = stringInput.value;
+            const sortedString = sortWordsByLength(textFromInput);
+            resultElement.textContent = sortedString;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 7 - Завдання 2</title>
+</head>
+<body>
+
+    <h1>Завдання 2</h1>
+    
+    <label for="stringInput">Введіть рядок:</label>
+    <input type="text" id="stringInput" placeholder="Рядок">
+    
+    <button id="runFunctionButton">Змінити регістр</button>
+    
+    <hr>
+    
+    <p>У верхньому регістрі: <span id="resultUpper">...</span></p>
+    <p>У нижньому регістрі: <span id="resultLower">...</span></p>
+
+    <script>
+        function changeCase(str) {
+            const upper = str.toUpperCase();
+            const lower = str.toLowerCase();
+            return { upper: upper, lower: lower };
+        }
+
+        const inputField = document.getElementById('stringInput');
+        const runButton = document.getElementById('runFunctionButton');
+        const resultUpperElement = document.getElementById('resultUpper');
+        const resultLowerElement = document.getElementById('resultLower');
+
+        runButton.addEventListener('click', function() {
+            const textFromInput = inputField.value;
+            const cases = changeCase(textFromInput);
+            resultUpperElement.textContent = cases.upper;
+            resultLowerElement.textContent = cases.lower;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 7</title>
+</head>
+<body>
+
+    <h1>Завдання 10</h1>
+    <p>Реалізуйте функцію, яка шукає найбільший спільний префікс для масиву рядків. 
+Вхід: ["flower", "flow", "flight"]
+Вихід: "fl"</p>
+    
+    <div>
+        <label for="stringInput">Введіть рядки через кому:</label>
+        <input type="text" id="stringInput" placeholder="flower, flow, flight" style="width: 300px;">
+    </div>
+    <br>
+    
+    <button id="runFunctionButton">Знайти</button>
+    
+    <hr>
+    
+    <p>Результат: "<span id="result">...</span>"</p>
+
+    <script>
+        function findLongestCommonPrefix(strs) {
+            if (!strs || strs.length === 0) {
+                return "";
+            }
+
+            let prefix = strs[0];
+
+            for (let i = 1; i < strs.length; i++) {
+                while (strs[i].indexOf(prefix) !== 0) {
+                    prefix = prefix.substring(0, prefix.length - 1);
+                    if (prefix === "") {
+                        return "";
+                    }
+                }
+            }
+
+            return prefix;
+        }
+
+        const stringInput = document.getElementById('stringInput');
+        const runButton = document.getElementById('runFunctionButton');
+        const resultElement = document.getElementById('result');
+
+        runButton.addEventListener('click', function() {
+            const textFromInput = stringInput.value;
+            const stringArray = textFromInput.split(',').map(s => s.trim());
+            
+            const prefix = findLongestCommonPrefix(stringArray);
+            
+            resultElement.textContent = prefix;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 7</title>
+</head>
+<body>
+
+    <h1>Завдання 9</h1>
+    <p> Напишіть функцію, яка знаходить найчастіше повторювану букву в рядку та повертає її.
+Вхід: "apple pay"
+Вихід: "p"</p>
+    
+    <div>
+        <label for="stringInput">Введіть рядок:</label>
+        <input type="text" id="stringInput" placeholder="apple pay">
+    </div>
+    <br>
+    
+    <button id="runFunctionButton">Знайти</button>
+    
+    <hr>
+    
+    <p>Результат: <span id="result">...</span></p>
+
+    <script>
+        function findMostFrequentChar(str) {
+            const charCount = {};
+            let maxCount = 0;
+            let maxChar = '';
+            
+            if (!str) {
+                return '';
+            }
+
+            for (let i = 0; i < str.length; i++) {
+                const char = str[i];
+                
+                if (char === ' ') {
+                    continue; 
+                }
+                
+                charCount[char] = (charCount[char] || 0) + 1;
+                
+                if (charCount[char] > maxCount) {
+                    maxCount = charCount[char];
+                    maxChar = char;
+                }
+            }
+            
+            return maxChar;
+        }
+
+        const stringInput = document.getElementById('stringInput');
+        const runButton = document.getElementById('runFunctionButton');
+        const resultElement = document.getElementById('result');
+
+        runButton.addEventListener('click', function() {
+            const textFromInput = stringInput.value;
+            const frequentChar = findMostFrequentChar(textFromInput);
+            resultElement.textContent = frequentChar;
+        });
+    </script>
+
+</body>
+</html>

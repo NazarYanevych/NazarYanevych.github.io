@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 7 - Завдання 1</title>
+</head>
+<body>
+
+    <h1>Завдання 1</h1>
+    
+    <label for="stringInput">Введіть рядок:</label>
+    <input type="text" id="stringInput" placeholder="Рядок">
+    
+    <button id="runFunctionButton">Порахувати довжину</button>
+    
+    <p>Довжина вашого рядка: <span id="result">...</span></p>
+
+    <script>
+        function getStringLength(str) {
+            return str.length;
+        }
+        const inputField = document.getElementById('stringInput');
+        const runButton = document.getElementById('runFunctionButton');
+        const resultElement = document.getElementById('result');
+
+        runButton.addEventListener('click', function() {
+            const textFromInput = inputField.value;
+            const length = getStringLength(textFromInput);
+            resultElement.textContent = length;
+        });
+    </script>
+
+</body>
+</html>

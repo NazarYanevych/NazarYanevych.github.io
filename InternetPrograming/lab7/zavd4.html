@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 7 - Завдання 4</title>
+</head>
+<body>
+
+    <h1>Завдання 4</h1>
+    
+    <div>
+        <label for="stringInput">Введіть рядок:</label>
+        <input type="text" id="stringInput" placeholder="hello world">
+    </div>
+    <br>
+    <div>
+        <label for="charInput">Введіть символ для підрахунку:</label>
+        <input type="text" id="charInput" maxlength="1" placeholder="o">
+    </div>
+    <br>
+    
+    <button id="runFunctionButton">Порахувати</button>
+    
+    <hr>
+    
+    <p>Кількість входжень: <span id="result">...</span></p>
+
+    <script>
+        function countOccurrences(str, char) {
+            let count = 0;
+            if (char.length === 0) {
+                return 0; // Не рахувати, якщо символ не введено
+            }
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] === char) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        const stringInput = document.getElementById('stringInput');
+        const charInput = document.getElementById('charInput');
+        const runButton = document.getElementById('runFunctionButton');
+        const resultElement = document.getElementById('result');
+
+        runButton.addEventListener('click', function() {
+            const textFromInput = stringInput.value;
+            const charToFind = charInput.value.charAt(0);
+            
+            const count = countOccurrences(textFromInput, charToFind);
+            
+            resultElement.textContent = count;
+        });
+    </script>
+
+</body>
+</html>

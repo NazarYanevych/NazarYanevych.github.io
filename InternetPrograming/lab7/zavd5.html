@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 7 - Завдання 5</title>
+</head>
+<body>
+
+    <h1>Завдання 5</h1>
+    
+    <div>
+        <label for="stringInput">Введіть рядок:</label>
+        <input type="text" id="stringInput" placeholder="abcdef">
+    </div>
+    <br>
+    
+    <button id="runFunctionButton">Виконати</button>
+    
+    <hr>
+    
+    <p>Результат: <span id="result">...</span></p>
+
+    <script>
+        function swapAdjacentChars(str) {
+            const chars = str.split('');
+            
+            for (let i = 0; i < chars.length - 1; i += 2) {
+                const temp = chars[i];
+                chars[i] = chars[i + 1];
+                chars[i + 1] = temp;
+            }
+            
+            return chars.join('');
+        }
+
+        const stringInput = document.getElementById('stringInput');
+        const runButton = document.getElementById('runFunctionButton');
+        const resultElement = document.getElementById('result');
+
+        runButton.addEventListener('click', function() {
+            const textFromInput = stringInput.value;
+            const swappedString = swapAdjacentChars(textFromInput);
+            resultElement.textContent = swappedString;
+        });
+    </script>
+
+</body>
+</html>

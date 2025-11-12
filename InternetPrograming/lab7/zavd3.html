@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 7 - Завдання 3</title>
+</head>
+<body>
+
+    <h1>Завдання 3</h1>
+    
+    <div>
+        <label for="stringInput">Введіть рядок:</label>
+        <input type="text" id="stringInput" placeholder="Hello world">
+    </div>
+    <br>
+    <div>
+        <label for="charInput">Введіть символ для пошуку:</label>
+        <input type="text" id="charInput" maxlength="1" placeholder="o">
+    </div>
+    <br>
+    
+    <button id="runFunctionButton">Знайти індекс</button>
+    
+    <hr>
+    
+    <p>Індекс першого входження: <span id="result">...</span></p>
+
+    <script>
+        function findFirstIndex(str, char) {
+            return str.indexOf(char);
+        }
+
+        const stringInput = document.getElementById('stringInput');
+        const charInput = document.getElementById('charInput');
+        const runButton = document.getElementById('runFunctionButton');
+        const resultElement = document.getElementById('result');
+
+        runButton.addEventListener('click', function() {
+            const textFromInput = stringInput.value;
+            const charToFind = charInput.value.charAt(0); 
+            const index = findFirstIndex(textFromInput, charToFind);
+            resultElement.textContent = index;
+        });
+    </script>
+
+</body>
+</html>
