@@ -4,15 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лабораторна 8 - Завдання 6 (Варіант 2)</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
-        .container { max-width: 600px; margin: auto; padding: 10px; border: 1px solid #ccc; border-radius: 8px; }
-        .form-group { margin-bottom: 10px; }
-        .form-group label { display: block; font-weight: bold; }
-        .form-group input { width: 95%; padding: 5px; }
-        button { padding: 8px 12px; margin-right: 10px; cursor: pointer; }
-        #result { margin-top: 15px; padding: 10px; background-color: #f4f4f4; border-radius: 4px; }
-    </style>
 </head>
 <body>
 
@@ -21,31 +12,37 @@
     <div class="container">
         <h2>Студент 1</h2>
         <div class="form-group">
-            <label for="s1-name">Ім'я:</label>
-            <input type="text" id="s1-name" placeholder="Іван Петренко">
+            <label for="s1-name">Ім'я:</label><br>
+            <input type="text" id="s1-name" placeholder="Імя Прізвище">
         </div>
+        <br>
         <div class="form-group">
-            <label for="s1-group">Група:</label>
-            <input type="text" id="s1-group" placeholder="КН-31">
+            <label for="s1-group">Група:</label><br>
+            <input type="text" id="s1-group" placeholder="ІПЗ-24">
         </div>
+        <br>
         <div class="form-group">
-            <label for="s1-grades">Оцінки (через кому):</label>
-            <input type="text" id="s1-grades" placeholder="5, 4, 5, 3">
+            <label for="s1-grades">Оцінки (через кому):</label><br>
+            <input type="text" id="s1-grades" placeholder="...">
         </div>
+        <br>
         
         <h2>Студент 2</h2>
         <div class="form-group">
-            <label for="s2-name">Ім'я:</label>
-            <input type="text" id="s2-name" placeholder="Марія Іваненко">
+            <label for="s2-name">Ім'я:</label><br>
+            <input type="text" id="s2-name" placeholder="Імя Прізвище">
         </div>
+        <br>
         <div class="form-group">
-            <label for="s2-group">Група:</label>
-            <input type="text" id="s2-group" placeholder="ПМ-32">
+            <label for="s2-group">Група:</label><br>
+            <input type="text" id="s2-group" placeholder="ІПЗ-24">
         </div>
+        <br>
         <div class="form-group">
-            <label for="s2-grades">Оцінки (через кому):</label>
-            <input type="text" id="s2-grades" placeholder="3, 4, 4, 3">
+            <label for="s2-grades">Оцінки (через кому):</label><br>
+            <input type="text" id="s2-grades" placeholder="...">
         </div>
+        <br>
 
         <button id="showButton">Показати інформацію</button>
         <button id="clearButton">Очистити поля</button>
@@ -134,7 +131,7 @@
                 <p><b>Студент 2:</b> ${info2}</p>
                 <hr>
                 <p><b>Порівняння:</b> ${comparison}</p>
-                <p><i>(Статичне поле 'university': ${Student.university})</i></p>
+                <p><i>Університет: ${Student.university})</i></p>
             `;
         });
 
