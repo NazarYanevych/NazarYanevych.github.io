@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 2.2</title>
+</head>
+<body>
+
+    <h1>Завдання 2.2</h1>
+    <form id="validationForm">
+        
+        <div>
+            <label for="email">E-mail (e-mail):</label><br>
+            <input type="email" id="email" name="email" placeholder="example@pnu.edu.ua">
+            <span class="validation-icon" id="email-icon"></span>
+            <small id="email-error"></small>
+        </div>
+        <br>
+        
+        <div>
+            <label for="fullName">Ім’я та прізвище:</label><br>
+            <input type="text" id="fullName" name="fullName" placeholder="Ім'я ПРІЗВИЩЕ">
+            <span class="validation-icon" id="fullName-icon"></span>
+            <small id="fullName-error"></small>
+        </div>
+        <br>
+
+        <div>
+            <label for="login">Логін:</label><br>
+            <input type="text" id="login" name="login" placeholder="login_example">
+            <span class="validation-icon" id="login-icon"></span>
+            <small id="login-error"></small>
+        </div>
+        <br>
+
+        <div>
+            <label for="password">Пароль:</label><br>
+            <input type="password" id="password" name="password" placeholder="Min 8 символів (A, a, 1, _)">
+            <span class="validation-icon" id="password-icon"></span>
+            <small id="password-error"></small>
+        </div>
+        <br>
+
+        <div>
+            <label for="zipcode">Поштовий індекс:</label><br>
+            <input type="text" id="zipcode" name="zipcode" placeholder="12345">
+            <span class="validation-icon" id="zipcode-icon"></span>
+            <small id="zipcode-error"></small>
+        </div>
+        <br>
+        
+        <button type="submit" id="validate-btn">Перевірити</button>
+    </form>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
