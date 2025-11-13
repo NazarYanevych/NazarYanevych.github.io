@@ -1,0 +1,50 @@
+<html>
+<head>
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <style>
+        .hover-style {
+            background-color: #ff0000;
+            border: 2px solid #007bff;
+            color: #0040ff;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            
+            alert("Бібліотека jQuery готова до роботи!");
+
+            var $text = $('#hide_text'); 
+            $text.hide(); 
+            $('.button').click(function() { 
+                $text.show(200); 
+            });
+
+            $("p:first").text("DOM first!");
+            jQuery("p:last").text("DOM last!");
+
+            $('#hide_text').hover(
+                function() {
+                    $(this).addClass("hover-style");
+                },
+                function() {
+                    $(this).removeClass("hover-style");
+                }
+            );
+
+        });
+    </script>
+</head>
+<body>
+    <p>Це перший абзац.</p>
+
+    <h1> Контент сторінки </h1>
+    
+    <a href="#" class="button"> Натисніть, щоб показати текст </a>
+    
+    <div id="hide_text"> Демонстраційний прихований текст </div>
+
+    <p>Це останній абзац.</p>
+</body>
+</html>

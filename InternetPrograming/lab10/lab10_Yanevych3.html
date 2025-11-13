@@ -1,0 +1,146 @@
+<html>
+<head>
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px dashed #ccc;
+        }
+
+        #style-box {
+            padding: 20px;
+            border: 2px dashed #333;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            width: 300px;
+            text-align: center;
+        }
+        .style-active {
+            border: 2px solid #007bff;
+            background-color: #e7f3ff;
+            font-weight: bold;
+        }
+
+        #show-image-label {
+            color: #007bff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        #my-image {
+            display: none;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #image-caption {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            color: white;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        form { margin-top: 10px; }
+        form span {
+            display: none;
+            color: red;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Лабораторна робота 10 (Завдання 3)</h1>
+
+    <h2>Завдання 3.1: Click / DblClick</h2>
+    <div id="style-box">(click) або (dblclick)</div>
+
+    <hr>
+    
+    <h2>Завдання 3.2: Кнопки</h2>
+    <button id="btn-click">Одинарний клік</button>
+    <button id="btn-dblclick">Подвійний клік</button>
+
+    <hr>
+
+    <h2>Завдання 3.3: Зображення</h2>
+    <span id="show-image-label">Показати зображення</span>
+    <br>
+    <img id="my-image" src="logo.jpg" alt="Зображення">
+    <div id="image-caption">підпис</div>
+    
+    <hr>
+
+    <h2>Завдання 3.4: Перевірка форми</h2>
+    <p> Введіть в текстове поле слово 'correct'.</p>
+    <form action="javascript:alert('Успішно!');">
+    <div>
+        <input type="text" />
+        <input type="submit" />
+    </div>
+    </form>
+    <span></span>
+
+
+    <script>
+        $(document).ready(function() {
+
+            $('#style-box').on('click', function() {
+                $(this).addClass('style-active');
+            });
+            $('#style-box').on('dblclick', function() {
+                $(this).removeClass('style-active');
+            });
+
+            $('#btn-click').on('click', function() {
+                alert('Одинарний клік');
+            });
+            $('#btn-dblclick').on('dblclick', function() {
+                alert('Подвійний клік');
+            });
+
+            $('#show-image-label').on('click', function() {
+                $('#my-image').show();
+            });
+
+            $('#my-image').on('click', function() {
+                $(this).hide();
+            });
+
+            $('#my-image').on('mouseover', function(e) {
+                $('#image-caption').css({
+                    'top': e.pageY + 10 + 'px',
+                    'left': e.pageX + 10 + 'px'
+                }).show();
+            });
+            
+            $('#my-image').on('mouseout', function() {
+                $('#image-caption').hide();
+            });
+
+            $("form").submit(function() {
+                if ($("input:first").val() == "correct") {
+                    $("span").text("Перевіряєм...").show();
+                    return true;
+                }
+                $("span").text("Неправильно!").show().fadeOut(1000);
+                return false;
+            });
+
+        });
+    </script>
+</body>
+</html>
