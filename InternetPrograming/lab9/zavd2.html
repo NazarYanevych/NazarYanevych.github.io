@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 9 - Завдання 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        #animation-container {
+            width: 80vw;
+            height: 400px;
+            margin: 20px auto;
+            border: 2px solid #333;
+            position: relative;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        #logo-image {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            top: 50px;
+            left: 50px;
+        }
+        
+        #logo-text {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            font-size: 1.5em;
+            font-weight: bold;
+            transition: color 0.5s;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Завдання 2: Анімований логотип</h1>
+    
+    <button id="toggleButton">Запустити анімацію</button>
+    
+    <div id="animation-container">
+        
+        <img src="logo.jpg" id="logo-image" alt="Логотип">
+        
+        <div id="logo-text">Інженерія програмного забезпечення</div>
+    </div>
+
+    <script>
+        const container = document.getElementById('animation-container');
+        const logoImage = document.getElementById('logo-image');
+        const logoText = document.getElementById('logo-text');
+        const toggleButton = document.getElementById('toggleButton');
+
+        let animationId = null; 
+        let lastTime = 0;
+
+        const logoState = {
+            x: 50,
+            y: 50,
+            vx: 150, 
+            vy: 100
+        };
+
+        function mainLoop(timestamp) {
+            const deltaTime = (timestamp - lastTime) / 1000; 
+            lastTime = timestamp;
+
+            const containerWidth = container.clientWidth;
+            const containerHeight = container.clientHeight;
+
+            logoState.x += logoState.vx * deltaTime;
+            logoState.y += logoState.vy * deltaTime;
+
+            if (logoState.x <= 0 || (logoState.x + logoImage.clientWidth) >= containerWidth) {
+                logoState.vx *= -1; 
+            }
+            if (logoState.y <= 0 || (logoState.y + logoImage.clientHeight) >= containerHeight) {
+                logoState.vy *= -1; 
+            }
+            
+            logoImage.style.left = logoState.x + 'px';
+            logoImage.style.top = logoState.y + 'px';
+
+            const scale = 1 + Math.sin(timestamp / 300) * 0.2; 
+            logoImage.style.transform = `scale(${scale})`;
+
+            const hue = (timestamp / 20) % 360; 
+            logoText.style.color = `hsl(${hue}, 80%, 50%)`;
+
+            animationId = requestAnimationFrame(mainLoop);
+        }
+
+        function startAnimation() {
+            if (!animationId) {
+                lastTime = performance.now();
+                animationId = requestAnimationFrame(mainLoop);
+                toggleButton.textContent = "Зупинити анімацію";
+            }
+        }
+
+        function stopAnimation() {
+            if (animationId) {
+                cancelAnimationFrame(animationId);
+                animationId = null;
+                toggleButton.textContent = "Запустити анімацію";
+            }
+        }
+
+        toggleButton.addEventListener('click', function() {
+            if (animationId) {
+                stopAnimation();
+            } else {
+                startAnimation();
+            }
+        });
+
+    </script>
+</body>
+</html>
