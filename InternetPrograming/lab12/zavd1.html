@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна 12 - Завдання 1</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        button { margin: 5px; padding: 8px; }
+
+        #demo-box {
+            width: 300px;
+            height: 150px;
+            background-color: #007bff;
+            border: 1px solid #0056b3;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Завдання 1: Демонстрація jQuery-ефектів</h1>
+
+    <div id="demo-box">Демо-блок</div>
+
+    <h2>Кнопки керування:</h2>
+    <div>
+        <button id="btn-fadeout">.fadeOut()</button>
+        <button id="btn-fadeto">.fadeTo(1000, 0.3)</button>
+        <button id="btn-fadetoggle">.fadeToggle()</button>
+    </div>
+    <div>
+        <button id="btn-finish">.finish() (Зупинити анімацію)</button>
+        <button id="btn-reset">Скинути (Показати)</button>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            const $demoBox = $("#demo-box");
+
+            $("#btn-fadeout").on("click", function() {
+                $demoBox.fadeOut(1000);
+            });
+
+            $("#btn-fadeto").on("click", function() {
+                $demoBox.fadeTo(1000, 0.3);
+            });
+
+            $("#btn-fadetoggle").on("click", function() {
+                $demoBox.fadeToggle(2000);
+            });
+
+            $("#btn-finish").on("click", function() {
+                $demoBox.finish();
+            });
+
+            $("#btn-reset").on("click", function() {
+                $demoBox.show().css("opacity", 1);
+            });
+        });
+    </script>
+
+</body>
+</html>

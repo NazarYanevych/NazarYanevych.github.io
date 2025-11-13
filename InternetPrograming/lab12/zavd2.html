@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна 12 - Завдання 2</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        button { font-size: 16px; padding: 10px; }
+        
+        #animation-container {
+            position: relative;
+            width: 80vw;
+            height: 300px;
+            margin-top: 20px;
+            border: 2px solid #333;
+            background-color: #f4f4f4;
+        }
+
+        #logo {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: 50px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Завдання 2: Метод .animate()</h1>
+    <p>Анімація логотипу "121 Інженерія програмного забезпечення"</p>
+    
+    <button id="btn-animate">Запустити анімацію</button>
+    <button id="btn-reset">Скинути</button>
+    
+    <div id="animation-container">
+        <img src="logo.jpg" id="logo" alt="Логотип">
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            
+            const $logo = $("#logo");
+            
+            const originalState = {
+                left: "20px",
+                opacity: 1.0,
+                width: "80px",
+                height: "80px"
+            };
+
+            $("#btn-animate").on("click", function() {
+                
+                $logo.animate({
+                    left: "70%",
+                    opacity: 0.25,
+                    width: "150px",
+                    height: "150px"
+                }, 
+                {
+                    duration: 2000,
+                    easing: "linear",
+                    
+                    complete: function() {
+                        alert("Анімація завершена!");
+                    }
+                });
+            });
+
+            $("#btn-reset").on("click", function() {
+                $logo.stop(true, true).css(originalState);
+            });
+        });
+    </script>
+
+</body>
+</html>
