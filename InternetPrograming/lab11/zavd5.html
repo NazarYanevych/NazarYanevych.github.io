@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна 11 - Завдання 5</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        button { margin: 5px 2px; }
+        .demo-box {
+            border: 2px dashed #007bff;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f4f8ff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Завдання 5: Демонстрація утиліт jQuery</h1>
+    <p><strong>Результат:</strong> <span id="output" style="color: #007bff;">...</span></p>
+
+    <h2>1. Метод $.contains()</h2>
+    <div class="demo-box" id="contains-container">
+        Контейнер
+        <span id="contains-descendant">Внутрішній елемент</span>
+    </div>
+    <p id="contains-outside">Зовнішній елемент</p>
+    <button id="btn-contains">Перевірити $.contains()</button>
+
+    <h2>2. Метод $.data()</h2>
+    <div class="demo-box" id="data-demo">Елемент для зберігання даних</div>
+    <button id="btn-data-set">Зберегти $.data()</button>
+    <button id="btn-data-get">Отримати $.data()</button>
+
+    <h2>3. Метод $.extend()</h2>
+    <p>Об'єкт 1: { name: "User", theme: "light" }</p>
+    <p>Об'єкт 2: { name: "Admin" }</p>
+    <button id="btn-extend">Виконати $.extend(Obj1, Obj2)</button>
+
+    <script>
+        $(document).ready(function() {
+            const output = $("#output");
+
+            $("#btn-contains").on("click", function() {
+                const container = $("#contains-container")[0];
+                const descendant = $("#contains-descendant")[0];
+                const outside = $("#contains-outside")[0];
+
+                const isDescendant = $.contains(container, descendant);
+                const isOutside = $.contains(container, outside);
+
+                output.text(`Чи містить контейнер нащадка: ${isDescendant}. Чи містить контейнер зовнішній елемент: ${isOutside}.`);
+            });
+
+            $("#btn-data-set").on("click", function() {
+                const dataBox = $("#data-demo")[0];
+                $.data(dataBox, "userInfo", { name: "Іван", role: "admin" });
+                output.text("Дані збережено в елементі.");
+            });
+
+            $("#btn-data-get").on("click", function() {
+                const dataBox = $("#data-demo")[0];
+                const storedData = $.data(dataBox, "userInfo");
+                
+                if (storedData) {
+                    output.text(`Отримані дані: ${JSON.stringify(storedData)}`);
+                } else {
+                    output.text("Дані не знайдено.");
+                }
+            });
+
+            $("#btn-extend").on("click", function() {
+                const defaults = { name: "User", theme: "light", id: 123 };
+                const options = { name: "Admin", theme: "dark" };
+                
+                const merged = $.extend({}, defaults, options);
+
+                output.text(`Результат злиття: ${JSON.stringify(merged)}`);
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна 11 - Завдання 1</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        button { margin: 5px 2px; }
+        div, p, input { margin-bottom: 10px; }
+        #html-demo, #css-demo {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        #attr-demo {
+            border: 2px solid #007bff;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Завдання 1: Демонстрація методів jQuery</h1>
+
+    <h2>1. Метод .html()</h2>
+    <div id="html-demo">Це <b>оригінальний</b> HTML-вміст.</div>
+    <button id="btn-html-get">Отримати .html()</button>
+    <button id="btn-html-set">Встановити .html("Новий <strong>HTML</strong>!")</button>
+
+    <h2>2. Метод .css()</h2>
+    <p id="css-demo">Текст для демонстрації .css()</p>
+    <button id="btn-css-get">Отримати .css("color")</button>
+    <button id="btn-css-set-one">Встановити .css("color", "red")</button>
+    <button id="btn-css-set-multi">Встановити .css({ "font-size": "20px", "background": "#f0f0f0" })</button>
+
+    <h2>3. Метод .val()</h2>
+    <input type="text" id="val-demo" value="Початкове значення">
+    <button id="btn-val-get">Отримати .val()</button>
+    <button id="btn-val-set">Встановити .val("Нове значення!")</button>
+
+    <h2>4. Методи .attr() / .removeAttr()</h2>
+    <img id="attr-demo" src="https://via.placeholder.com/150" alt="Старий alt" width="150">
+    <br>
+    <button id="btn-attr-get">Отримати .attr("src")</button>
+    <button id="btn-attr-set-one">Встановити .attr("src", "...")</button>
+    <button id="btn-attr-set-multi">Встановити .attr({ alt: "Новий alt", title: "Новий title" })</button>
+    <button id="btn-attr-set-func">Встановити .attr("width", func)</button>
+    <button id="btn-attr-remove">Видалити .removeAttr("title")</button>
+
+    <p><strong>Результат:</strong> <span id="output" style="color: #007bff;">...</span></p>
+
+    <script>
+        $(document).ready(function() {
+            const output = $("#output");
+
+            $("#btn-html-get").on("click", function() {
+                const htmlContent = $("#html-demo").html();
+                output.text(htmlContent);
+            });
+            $("#btn-html-set").on("click", function() {
+                $("#html-demo").html("Новий <strong>HTML</strong>!");
+                output.text("Вміст .html() змінено.");
+            });
+
+            $("#btn-css-get").on("click", function() {
+                const color = $("#css-demo").css("color");
+                output.text(color);
+            });
+            $("#btn-css-set-one").on("click", function() {
+                $("#css-demo").css("color", "red");
+                output.text("Колір змінено на червоний.");
+            });
+            $("#btn-css-set-multi").on("click", function() {
+                $("#css-demo").css({
+                    "font-size": "20px",
+                    "background-color": "#f0f0f0"
+                });
+                output.text("Розмір шрифту та фон змінено.");
+            });
+
+            $("#btn-val-get").on("click", function() {
+                const valContent = $("#val-demo").val();
+                output.text(valContent);
+            });
+            $("#btn-val-set").on("click", function() {
+                $("#val-demo").val("Нове значення!");
+                output.text("Значення .val() змінено.");
+            });
+
+            $("#btn-attr-get").on("click", function() {
+                const src = $("#attr-demo").attr("src");
+                output.text(src);
+            });
+            $("#btn-attr-set-one").on("click", function() {
+                $("#attr-demo").attr("src", "logo.jpg");
+                output.text("Атрибут src змінено.");
+            });
+            $("#btn-attr-set-multi").on("click", function() {
+                $("#attr-demo").attr({
+                    alt: "Новий alt текст",
+                    title: "Це новий title"
+                });
+                output.text("Атрибути alt і title змінено.");
+            });
+            $("#btn-attr-set-func").on("click", function() {
+                $("#attr-demo").attr("width", function(index, oldWidth) {
+                    return parseInt(oldWidth) + 20; 
+                });
+                output.text("Ширина (width) збільшена на 20px.");
+            });
+            $("#btn-attr-remove").on("click", function() {
+                $("#attr-demo").removeAttr("title");
+                output.text("Атрибут title видалено.");
+            });
+        });
+    </script>
+
+</body>
+</html>

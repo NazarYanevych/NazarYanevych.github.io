@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна 11 - Завдання 4</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        button { margin: 5px; padding: 8px; }
+        .demo-container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .modified-style {
+            background-color: #fffb00;
+            border: 1px solid #e6db55;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Завдання 4: Метод .filter()</h1>
+
+    <h2>1. Фільтр за класом (.highlight-me)</h2>
+    <div class="demo-container">
+        <div class="highlight-me">Це елемент з класом.</div>
+        <p>Це звичайний параграф.</p>
+        <div class="highlight-me">Це ще один елемент з класом.</div>
+        <div>Елемент без класу.</div>
+    </div>
+    <button id="btn-filter-class">Виконати фільтр за класом</button>
+
+    <hr>
+    
+    <h2>2. Фільтр (кожен 3-й елемент &lt;li&gt;)</h2>
+    <ul class="demo-container" id="li-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3 (буде вибрано)</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6 (буде вибрано)</li>
+        <li>Item 7</li>
+        <li>Item 8</li>
+    </ul>
+    <button id="btn-filter-li">Виконати фільтр li</button>
+
+    <hr>
+    <button id="btn-reset">Скинути все</button>
+
+    <script>
+        $(document).ready(function() {
+
+            $("#btn-filter-class").on("click", function() {
+                $(".demo-container *")
+                    .filter(".highlight-me") 
+                    .addClass("modified-style")
+                    .append(" <b>(modify)</b>");
+            });
+
+            $("#btn-filter-li").on("click", function() {
+                $("#li-list li")
+                    .filter(function(index) {
+                        return (index + 1) % 3 === 0;
+                    })
+                    .addClass("modified-style")
+                    .append(" <b>(modify)</b>");
+            });
+
+            $("#btn-reset").on("click", function() {
+                $(".modified-style")
+                    .removeClass("modified-style")
+                    .find("b").remove();
+            });
+
+        });
+    </script>
+
+</body>
+</html>

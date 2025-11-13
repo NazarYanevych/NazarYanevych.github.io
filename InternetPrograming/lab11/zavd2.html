@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна 11 - Завдання 2</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        button { margin: 5px 2px; }
+        .demo-box {
+            border: 2px dashed #007bff;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f4f8ff;
+        }
+        #width-demo {
+            width: 300px;
+            height: 50px;
+            padding: 10px;
+            margin: 15px;
+            background-color: #ffe0e0;
+            border: 5px solid #c00;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Завдання 2: Демонстрація методів</h1>
+    <p><strong>Результат:</strong> <span id="output" style="color: #007bff;">...</span></p>
+
+    <h2>1. Метод .appendTo()</h2>
+    <div class="demo-box" id="append-target">
+        <span>Це початок контейнера. </span>
+    </div>
+    <p id="append-source">Цей елемент буде переміщено в кінець синього контейнера.</p>
+    <button id="btn-appendto">Виконати .appendTo("#append-target")</button>
+
+    <h2>2. Метод .replaceWith()</h2>
+    <div class="demo-box">
+        <p id="replace-target">Цей абзац буде замінено.</p>
+    </div>
+    <button id="btn-replacewith">Виконати .replaceWith("&lt;h3&gt;Замінено!&lt;/h3&gt;")</button>
+
+    <h2>3. Методи .width(функція) та .outerWidth()</h2>
+    <div id="width-demo">Це блок для вимірювання.</div>
+    <button id="btn-width-func">Виконати .width(function)</button>
+    <button id="btn-outerwidth">Отримати .outerWidth()</button>
+    <button id="btn-outerwidth-margin">Отримати .outerWidth(true) (з margin)</button>
+
+    <script>
+        $(document).ready(function() {
+            const output = $("#output");
+
+            $("#btn-appendto").on("click", function() {
+                $("#append-source").appendTo("#append-target");
+                output.text("Елемент #append-source переміщено.");
+                $(this).prop("disabled", true);
+            });
+
+            $("#btn-replacewith").on("click", function() {
+                $("#replace-target").replaceWith("<h3>Елемент успішно замінено!</h3>");
+                output.text("Елемент #replace-target замінено.");
+                $(this).prop("disabled", true);
+            });
+
+            $("#btn-width-func").on("click", function() {
+                $("#width-demo").width(function(index, oldWidth) {
+                    return oldWidth + 50;
+                });
+                const newWidth = $("#width-demo").width();
+                output.text("Ширина збільшена на 50px. Нова ширина: " + newWidth + "px");
+            });
+
+            $("#btn-outerwidth").on("click", function() {
+                const outerWidth = $("#width-demo").outerWidth();
+                output.text("OuterWidth (включно з padding + border): " + outerWidth + "px");
+            });
+
+            $("#btn-outerwidth-margin").on("click", function() {
+                const outerWidthMargin = $("#width-demo").outerWidth(true);
+                output.text("OuterWidth(true) (включно з padding + border + margin): " + outerWidthMargin + "px");
+            });
+        });
+    </script>
+
+</body>
+</html>

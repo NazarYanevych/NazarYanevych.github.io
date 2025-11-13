@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна 11 - Завдання 3</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        button { margin: 5px; padding: 8px; }
+
+        .playground * {
+            display: block;
+            border: 2px solid #999;
+            padding: 10px;
+            margin: 10px;
+        }
+        .playground div { border-color: #007bff; }
+        .playground ul { border-color: #28a745; }
+        .playground li { border-color: #dc3545; }
+        .playground span { border-color: #ffc107; }
+
+        .highlight {
+            background-color: #fffb00;
+            box-shadow: 0 0 8px #fffb00;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Завдання 3: Демонстрація методів</h1>
+
+    <div class="playground">
+        Container (div)
+        <ul>
+            UL (parent)
+            <li>Item 1 (li)</li>
+            <li class="start-point">Item 2 (li.start-point) <span>(span)</span></li>
+            <li>Item 3 (li)</li>
+            <li>Item 4 (li)</li>
+        </ul>
+    </div>
+
+    <h2>Кнопки керування:</h2>
+    <button id="btn-reset">Скинути</button>
+    <button id="btn-children">.children()</button>
+    <button id="btn-parents">.parents()</button>
+    <button id="btn-last">.last()</button>
+    <button id="btn-has">.has()</button>
+    <button id="btn-addback">.addBack()</button>
+
+    <p><strong>Результат:</strong> <span id="output">...</span></p>
+
+    <script>
+        $(document).ready(function() {
+            const output = $("#output");
+            const playground = $(".playground");
+
+            function resetDemo() {
+                playground.find("*").removeClass("highlight");
+                output.text("...");
+            }
+
+            $("#btn-reset").on("click", resetDemo);
+
+            $("#btn-children").on("click", function() {
+                resetDemo();
+                const $result = $("ul").children();
+                $result.addClass("highlight");
+                output.text("Вибрано прямих нащадків <ul> (елементи li).");
+            });
+
+            $("#btn-parents").on("click", function() {
+                resetDemo();
+                const $result = $("li.start-point").parents();
+                $result.addClass("highlight");
+                output.text("Вибрано всіх батьків елемента <li.start-point>.");
+            });
+
+            $("#btn-last").on("click", function() {
+                resetDemo();
+                const $result = $("li").last();
+                $result.addClass("highlight");
+                output.text("Вибрано останній <li> елемент.");
+            });
+
+            $("#btn-has").on("click", function() {
+                resetDemo();
+                const $result = $("li").has("span");
+                $result.addClass("highlight");
+                output.text("Вибрано <li>, який містить <span>.");
+            });
+
+            $("#btn-addback").on("click", function() {
+                resetDemo();
+                const $result = $("li.start-point").siblings().addBack();
+                $result.addClass("highlight");
+                output.text("Вибрано <li.start-point> та його 'братів' (siblings).");
+            });
+        });
+    </script>
+
+</body>
+</html>
