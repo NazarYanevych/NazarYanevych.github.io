@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@pnu\.edu\.ua$/i;
 
-const fullNameRegex = /^\p{L}+\s\p{L}+$/u;
+const fullNameRegex = /^\p{Lu}\p{Ll}+\s\p{Lu}+$/u;
     
 const loginRegex = /^[a-zA-Z0-9_]+$/;
     
